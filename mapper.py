@@ -79,7 +79,6 @@ CACHE_FUZZY = {}
 
 @lru_cache(maxsize=5000)
 def terjemahkan_bahasa(title):
-    """Sultan Translator: Mengubah bahasa asing menjadi Indonesia & merapikan 'vs'"""
     t = title
     kamus_asing = {
         "fudbal": "Sepakbola", "nogomet": "Sepakbola", "odbojka": "Voli", "košarka": "Basket",
@@ -89,13 +88,12 @@ def terjemahkan_bahasa(title):
         "liga prvaka": "Liga Champions", "liga prvakov": "Liga Champions",
         "evropska liga": "Liga Europa", "europska liga": "Liga Europa",
         "zlatna liga": "Liga Emas", "rukomet": "Bola Tangan", "hokej": "Hoki",
-        "tenis": "Tenis"
+        "tenis": "Tenis", "piłka nożna": "Sepakbola"
     }
     
     for asing, indo in kamus_asing.items():
         t = re.sub(r'(?i)\b' + asing + r'\b', indo, t)
     
-    # Ubah "Tim A - Tim B" menjadi "Tim A vs Tim B" di awal kalimat
     t = re.sub(r'^([A-Za-z0-9\s]+)\s+-\s+([A-Za-z0-9\s]+)([\.,]|$)', r'\1 vs \2\3', t)
     return t
 
@@ -111,7 +109,7 @@ REGEX_EVENT = re.compile(r'(?:^|[^0-9])(\d{2})[:\.](\d{2})\s*(?:WIB)?\s*[\-\|]?\
 def bersihkan_judul_event(title):
     bersih = REGEX_LIVE.sub('', title)
     bersih = re.sub(r'^[\-\:\,\|]\s*', '', re.sub(r'\s+', ' ', bersih)).strip()
-    return terjemahkan_bahasa(bersih) # Panggil penerjemah di sini
+    return terjemahkan_bahasa(bersih)
 
 def generate_event_key(title, timestamp):
     tc = re.sub(r'(?i)\#\s*\d+|\[.*?\]|\(.*?\)', '', title)
@@ -185,10 +183,11 @@ def is_valid_time_continent(w, title, ch_name):
 def parse_time(ts):
     if not ts: return None
     try:
+        # LOGIKA ASLI DIKEMBALIKAN: +7 Jam untuk semua XML yang tidak punya timezone (Mengubah UTC jadi WIB)
         if len(ts) >= 19 and ('+' in ts or '-' in ts):
             dt = datetime.strptime(ts[:20].strip(), "%Y%m%d%H%M%S %z")
             return dt.astimezone(timezone(timedelta(hours=7))).replace(tzinfo=None)
-        return datetime.strptime(ts[:14], "%Y%m%d%H%M%S")
+        return datetime.strptime(ts[:14], "%Y%m%d%H%M%S") + timedelta(hours=7)
     except: return None
 
 def fetch_url(url, is_epg):
@@ -288,7 +287,7 @@ for url, content in epg_contents.items():
                 if cid not in jadwal_dict: jadwal_dict[cid] = []
                 logo = pg.find("icon").get("src") if pg.find("icon") is not None else ""
                 jadwal_dict[cid].append({
-                    "title": bersihkan_judul_event(title), # Ini sudah diterjemahkan otomatis
+                    "title": bersihkan_judul_event(title),
                     "start": st, "stop": sp, "live": (st - timedelta(minutes=5)) <= now_wib < sp,
                     "logo": logo
                 })
@@ -302,7 +301,7 @@ audit_m3u = {}
 print("3. Mencocokkan M3U dengan Jadwal Sultan & Audit Laporan Berwarna...")
 for url in M3U_URLS:
     provider_name = get_provider_name(url)
-    audit_m3u[provider_name] = [] # Pastikan provider selalu terdaftar di laporan
+    audit_m3u[provider_name] = [] 
     
     content = m3u_contents.get(url)
     if not content: continue
@@ -485,7 +484,6 @@ with open("laporan_channel_m3u.md", "w", encoding="utf-8") as f:
     for provider, laporan in audit_m3u.items():
         f.write(f"### 📁 SUMBER: {provider}\n")
         
-        # Jika laporan kosong sama sekali, beri keterangan wajib cetak
         if not laporan:
             f.write("- ⚪ Tidak ada channel olahraga target atau link mati.\n")
         else:
@@ -494,4 +492,4 @@ with open("laporan_channel_m3u.md", "w", encoding="utf-8") as f:
                 f.write(f"- {baris}\n")
         f.write("\n---\n\n")
 
-print(f"SELESAI! Laporan pasti tercetak & Bahasa Asing otomatis diterjemahkan!")
+print(f"SELESAI! Jam Tayang WIB 100% Presisi!")
