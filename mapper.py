@@ -4,7 +4,6 @@ import gzip
 import xml.etree.ElementTree as ET
 import re
 import difflib
-import os
 import concurrent.futures
 from functools import lru_cache
 from datetime import datetime, timedelta, timezone
@@ -31,6 +30,7 @@ EPG_URLS = [
     "https://epg.pw/xmltv/epg.xml.gz"
 ]
 
+MAP_URL = "https://raw.githubusercontent.com/karepech/bakul/refs/heads/main/map.txt"
 OUTPUT_FILE = "playlist_termapping.m3u"
 LINK_STANDBY = "https://bwifi.my.id/live.mp4" 
 LINK_UPCOMING = "https://bwifi.my.id/5menit.mp4" 
@@ -38,25 +38,47 @@ LINK_UPCOMING = "https://bwifi.my.id/5menit.mp4"
 GLOBAL_SEEN_STREAM_URLS = set()
 
 # ========================================================
-# 2. MESIN MAPPING CERDAS KITA (Kamus & Rumus)
+# 2. MESIN MAPPING CERDAS KITA (Kamus Link & Rumus)
 # ========================================================
+COMPILED_MAPPING = []
+
+def load_mapping():
+    """Mengambil kamus nama dari link GitHub Anda"""
+    print("Mendownload kamus mapping...")
+    try:
+        r = requests.get(MAP_URL, timeout=30).text
+        MAPPING_DICT = {}
+        for line in r.splitlines():
+            line = line.split('#')[0].strip() 
+            if not line or line.startswith('['): continue
+            if '=' in line:
+                official, aliases = line.split('=', 1)
+                official = official.strip().lower()
+                for alias in aliases.split(','):
+                    alias = alias.strip().lower()
+                    if alias: MAPPING_DICT[alias] = official
+        
+        # Urutkan dari yang terpanjang agar replace akurat
+        sorted_map = dict(sorted(MAPPING_DICT.items(), key=lambda x: len(x[0]), reverse=True))
+        for alias, official in sorted_map.items():
+            COMPILED_MAPPING.append((re.compile(r'\b' + re.escape(alias) + r'\b'), official))
+        print(f"✅ Berhasil memuat {len(COMPILED_MAPPING)} istilah kamus pintar!")
+    except Exception as e:
+        print(f"❌ Gagal memuat map.txt: {e}")
+
 @lru_cache(maxsize=10000) 
 def rumus_samakan_teks(teks):
     if not teks: return ""
     teks = teks.lower()
+    
+    # Terapkan kamus terjemahan dari link Anda dulu
+    for pattern, official in COMPILED_MAPPING:
+        teks = pattern.sub(official, teks)
+        
     teks = re.sub(r'\b(sports|sport|tv|hd|fhd|sd|4k|ch|channel|network)\b', '', teks)
     teks = re.sub(r'\[.*?\]|\(.*?\)', '', teks)
     teks = re.sub(r'[^a-z0-9]', '', teks)
     return teks
-
-kamus_manual = {}
-if os.path.exists("kamus_mapping.txt"):
-    with open("kamus_mapping.txt", "r", encoding="utf-8") as f:
-        for line in f:
-            if "=" in line:
-                parts = line.strip().split("=")
-                if len(parts) == 3:
-                    kamus_manual[parts[1].strip().lower()] = {"epg": parts[0].strip(), "nama": parts[2].strip()}
 
 CACHE_FUZZY = {}
 
@@ -109,7 +131,7 @@ def get_region_ktp(name, epg_id=""):
 
 @lru_cache(maxsize=5000)
 def is_target_sport_channel(name):
-    """SATPAM PINTU MASUK: Buang VOD, Movie, Kids, News dll."""
+    """SATPAM: Buang VOD, Movie, Kids, dll"""
     n = name.lower()
     sampah = ['movie', 'cinema', 'film', 'drama', 'kids', 'news', 'music', 'kompas', 'tvone', 'metro', 'berita', 'religi', 'alquran', 'fashion', 'animal', 'history', 'discovery', 'natgeo', 'kartun', 'cartoon', 'hbo', 'fox movies', 'cinemax', 'axn']
     if any(x in n for x in sampah): return False
@@ -171,7 +193,6 @@ def fetch_url(url, is_epg):
         return url, None, is_epg
 
 def get_provider_name(url):
-    """Mengubah Link M3U menjadi Nama Penyedia Rapi"""
     if "aspaltvpasti" in url: return "ASPALT TV PASTI"
     if "deccotech" in url: return "DECOTECH"
     if "freeiptv" in url: return "FREE IPTV 2026"
@@ -188,14 +209,16 @@ def get_provider_name(url):
 # ========================================================
 # 4. EKSEKUSI GABUNGAN
 # ========================================================
+load_mapping() # Muat kamus dari link GitHub
+
 now_wib = datetime.utcnow() + timedelta(hours=7)
 limit_date = now_wib.replace(hour=3, minute=0, second=0, microsecond=0) if now_wib.hour < 3 else (now_wib + timedelta(days=1)).replace(hour=3, minute=0, second=0, microsecond=0)
-limit_past = now_wib - timedelta(days=2) # Mundur 48 jam untuk Buku Sejarah
+limit_past = now_wib - timedelta(days=2) 
 
 epg_dict = {} 
 kamus_rumus_epg = {}
 jadwal_dict = {} 
-buku_sejarah_replay = set() # Mengingat judul yang sudah tayang kemarin
+buku_sejarah_replay = set() 
 
 print("1. Mendownload EPG dan M3U secara serentak (Turbo Mode)...")
 epg_contents = {}
@@ -231,21 +254,17 @@ for url, content in epg_contents.items():
             durasi = (sp - st).total_seconds() / 60 if st and sp else 0
             
             if not st or not sp: continue
-            
             judul_bersih = bersihkan_judul_event(title).lower()
             
-            # A. CATAT BUKU SEJARAH (Acara yang sudah lewat)
             if limit_past <= sp < now_wib:
                 if is_allowed_sport(title, durasi):
                     buku_sejarah_replay.add(judul_bersih)
                 continue
             
-            # B. JADWAL HARI INI / MASA DEPAN
             if sp <= now_wib or st >= limit_date: continue 
             
-            # Cek apakah judul ini ada di buku sejarah kemarin? (Deteksi Siaran Ulang Murni)
             if judul_bersih in buku_sejarah_replay:
-                continue # BLOKIR! Ini adalah siaran ulang yang menyamar.
+                continue 
             
             w = st.hour + (st.minute / 60.0)
             if is_allowed_sport(title, durasi) and is_valid_time_continent(w, title, epg_dict[cid]):
@@ -263,7 +282,7 @@ daftar_teks_epg_dirumus = list(kamus_rumus_epg.keys())
 keranjang_match = {}
 audit_m3u = {}
 
-print("3. Mencocokkan M3U dengan Jadwal Sultan & Audit Laporan...")
+print("3. Mencocokkan M3U dengan Jadwal Sultan & Audit Laporan Berwarna...")
 for url in M3U_URLS:
     provider_name = get_provider_name(url)
     audit_m3u[provider_name] = []
@@ -289,7 +308,6 @@ for url in M3U_URLS:
                 raw_attrs, m3u_name = raw_extinf.split(",", 1)
                 m3u_name = m3u_name.strip()
                 
-                # SATPAM PINTU MASUK: Bypass channel non-olahraga
                 ev_m = REGEX_EVENT.search(m3u_name)
                 if not ev_m and not is_target_sport_channel(m3u_name):
                     continue 
@@ -329,9 +347,9 @@ for url in M3U_URLS:
                             inf = f'#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="{orig_logo}", {judul}'
                             keranjang_match[key]["links"].append({"prio": 0, "data": [inf, f"{LINK_UPCOMING}?m={key}"]})
                         
-                        audit_m3u[provider_name].append(f"{m3u_name} ({m3u_name}) cocok id epg (EVENT OTOMATIS)")
+                        audit_m3u[provider_name].append(f"🟣 **[EVENT]** {m3u_name} (EVENT) otomatis masuk jadwal")
                     else:
-                        audit_m3u[provider_name].append(f"{m3u_name} ({m3u_name}) tidak cocok id epg (KADALUARSA)")
+                        audit_m3u[provider_name].append(f"🟤 **[BASI]** {m3u_name} (EVENT) tidak cocok id epg (KADALUARSA)")
                     continue
 
                 # --- EKSEKUSI CHANNEL M3U ---
@@ -341,47 +359,41 @@ for url in M3U_URLS:
                 # FALLBACK LOGIC: Jika tvg-id kosong, pakai nama channel
                 id_bawaan = id_m3u if id_m3u else m3u_name
                 
-                kunci_manual = id_bawaan.lower() if id_bawaan.lower() in kamus_manual else m3u_name.lower()
+                teks_m3u_dirumus = rumus_samakan_teks(id_bawaan) or rumus_samakan_teks(m3u_name)
                 id_epg_terpilih = ""
                 metode = ""
                 
-                if kunci_manual in kamus_manual:
-                    id_epg_terpilih = kamus_manual[kunci_manual]["epg"]
-                    metode = "KAMUS MANUAL"
+                kandidat_id = None
+                if teks_m3u_dirumus in kamus_rumus_epg:
+                    kandidat_id = kamus_rumus_epg[teks_m3u_dirumus]
+                    metode = "EXACT"
                 else:
-                    teks_m3u_dirumus = rumus_samakan_teks(id_bawaan) or rumus_samakan_teks(m3u_name)
-                    kandidat_id = None
-                    
-                    if teks_m3u_dirumus in kamus_rumus_epg:
-                        kandidat_id = kamus_rumus_epg[teks_m3u_dirumus]
-                        metode = "RUMUS EXACT"
-                    else:
-                        if teks_m3u_dirumus not in CACHE_FUZZY:
-                            CACHE_FUZZY[teks_m3u_dirumus] = difflib.get_close_matches(teks_m3u_dirumus, daftar_teks_epg_dirumus, n=3, cutoff=0.8)
-                        mirip = CACHE_FUZZY[teks_m3u_dirumus]
-                        for m in mirip:
-                            temp_id = kamus_rumus_epg[m]
-                            ktp_epg = get_region_ktp(epg_dict.get(temp_id, ""), temp_id)
-                            ktp_m3u = get_region_ktp(m3u_name)
-                            if 'bein' in temp_id.lower() or 'spotv' in temp_id.lower():
-                                if (ktp_epg if ktp_epg != "UNKNOWN" else "ID") == (ktp_m3u if ktp_m3u != "UNKNOWN" else "ID"):
-                                    kandidat_id = temp_id
-                                    break
-                            elif ktp_epg == "UNKNOWN" or ktp_m3u == "UNKNOWN" or ktp_epg == ktp_m3u:
+                    if teks_m3u_dirumus not in CACHE_FUZZY:
+                        CACHE_FUZZY[teks_m3u_dirumus] = difflib.get_close_matches(teks_m3u_dirumus, daftar_teks_epg_dirumus, n=3, cutoff=0.8)
+                    mirip = CACHE_FUZZY[teks_m3u_dirumus]
+                    for m in mirip:
+                        temp_id = kamus_rumus_epg[m]
+                        ktp_epg = get_region_ktp(epg_dict.get(temp_id, ""), temp_id)
+                        ktp_m3u = get_region_ktp(m3u_name)
+                        if 'bein' in temp_id.lower() or 'spotv' in temp_id.lower():
+                            if (ktp_epg if ktp_epg != "UNKNOWN" else "ID") == (ktp_m3u if ktp_m3u != "UNKNOWN" else "ID"):
                                 kandidat_id = temp_id
                                 break
-                        if kandidat_id: metode = "RUMUS FUZZY"
-                                
-                    if kandidat_id:
-                        if not ('bein' in kandidat_id.lower() or 'spotv' in kandidat_id.lower()):
-                           ktp_epg = get_region_ktp(epg_dict.get(kandidat_id, ""), kandidat_id)
-                           ktp_m3u = get_region_ktp(m3u_name)
-                           if ktp_epg == "UNKNOWN" or ktp_m3u == "UNKNOWN" or ktp_epg == ktp_m3u:
-                               id_epg_terpilih = kandidat_id
-                        else:
-                             id_epg_terpilih = kandidat_id
+                        elif ktp_epg == "UNKNOWN" or ktp_m3u == "UNKNOWN" or ktp_epg == ktp_m3u:
+                            kandidat_id = temp_id
+                            break
+                    if kandidat_id: metode = "FUZZY"
+                            
+                if kandidat_id:
+                    if not ('bein' in kandidat_id.lower() or 'spotv' in kandidat_id.lower()):
+                        ktp_epg = get_region_ktp(epg_dict.get(kandidat_id, ""), kandidat_id)
+                        ktp_m3u = get_region_ktp(m3u_name)
+                        if ktp_epg == "UNKNOWN" or ktp_m3u == "UNKNOWN" or ktp_epg == ktp_m3u:
+                            id_epg_terpilih = kandidat_id
+                    else:
+                            id_epg_terpilih = kandidat_id
 
-                # --- PENCATATAN LAPORAN SESUAI FORMAT ---
+                # --- PENCATATAN LAPORAN BERWARNA (EMOJI) ---
                 if id_epg_terpilih and id_epg_terpilih in jadwal_dict:
                     punya_jadwal = False
                     for ev in jadwal_dict[id_epg_terpilih]:
@@ -404,18 +416,17 @@ for url in M3U_URLS:
                             keranjang_match[key]["links"].append({"prio": 1, "data": [inf, f"{LINK_UPCOMING}?m={key}"]})
                     
                     if punya_jadwal:
-                        if metode == "KAMUS MANUAL": audit_m3u[provider_name].append(f"{m3u_name} ({id_bawaan}) cocok [manual] ({id_epg_terpilih})")
-                        elif metode == "RUMUS FUZZY": audit_m3u[provider_name].append(f"{m3u_name} ({id_bawaan}) cocok [fuzzy] ({id_epg_terpilih})")
-                        else: audit_m3u[provider_name].append(f"{m3u_name} ({id_bawaan}) cocok id epg ({id_epg_terpilih})")
+                        if metode == "FUZZY": audit_m3u[provider_name].append(f"🟡 **[FUZZY]** {m3u_name} ({id_bawaan}) cocok [fuzzy] ({id_epg_terpilih})")
+                        else: audit_m3u[provider_name].append(f"🟢 **[EXACT]** {m3u_name} ({id_bawaan}) cocok id epg ({id_epg_terpilih})")
                     else:
-                        audit_m3u[provider_name].append(f"{m3u_name} ({id_bawaan}) tidak cocok id epg (KOSONG - Jadwal Habis/Dihapus Filter)")
+                        audit_m3u[provider_name].append(f"🔴 **[KOSONG]** {m3u_name} ({id_bawaan}) tidak cocok id epg (KOSONG - Habis/Filter)")
                 else:
-                    audit_m3u[provider_name].append(f"{m3u_name} ({id_bawaan}) tidak cocok id epg (KOSONG)")
+                    audit_m3u[provider_name].append(f"🔴 **[KOSONG]** {m3u_name} ({id_bawaan}) tidak cocok id epg (KOSONG)")
                     
     except Exception as e:
         print(f"Error memproses M3U {url}: {e}")
 
-print("4. Merender M3U Final dan Laporan...")
+print("4. Merender M3U Final dan Laporan Markdown...")
 hasil_render = []
 for key, match in keranjang_match.items():
     links = match["links"]
@@ -433,7 +444,6 @@ for key, match in keranjang_match.items():
 
 hasil_render.sort(key=lambda x: (x["order"], float(x["sort"]), x["vip"]))
 
-# Cetak File Utama (M3U)
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     f.write(f'#EXTM3U name="🔴 BAKUL WIFI SPORTS"\n')
     if not hasil_render: 
@@ -442,16 +452,19 @@ with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         for it in hasil_render: 
             f.write("\n".join(it["data"]) + "\n")
 
-# Cetak Laporan Audit Channel (Per Penyedia M3U)
-with open("laporan_channel_m3u.txt", "w", encoding="utf-8") as f:
-    f.write("=== LAPORAN AUDIT CHANNEL BAKUL WIFI SPORTS ===\n")
-    f.write(f"Diperbarui pada: {now_wib.strftime('%d-%m-%Y %H:%M WIB')}\n\n")
+# Laporan Rapi Berwarna (Markdown & Emoji)
+with open("laporan_channel_m3u.md", "w", encoding="utf-8") as f:
+    f.write("# LAPORAN AUDIT CHANNEL BAKUL WIFI SPORTS\n")
+    f.write(f"**Diperbarui pada:** {now_wib.strftime('%d-%m-%Y %H:%M WIB')}\n\n")
     
     for provider, laporan in audit_m3u.items():
         if not laporan: continue 
-        f.write(f"**{provider}**\n")
-        for baris in laporan:
-            f.write(f"{baris}\n")
-        f.write("\n")
+        f.write(f"### 📁 SUMBER: {provider}\n")
+        
+        # Sortir agar yang hijau di atas, merah di bawah
+        laporan_sorted = sorted(laporan, key=lambda x: 0 if "🟢" in x or "🟡" in x or "🟣" in x else 1)
+        for baris in laporan_sorted:
+            f.write(f"- {baris}\n")
+        f.write("\n---\n\n")
 
-print(f"SELESAI! Buku Sejarah Aktif, Siaran Ulang Dibasmi, Laporan Rapi!")
+print(f"SELESAI! Laporan berwarna tersimpan di laporan_channel_m3u.md!")
