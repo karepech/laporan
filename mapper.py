@@ -4,7 +4,6 @@ import gzip
 import xml.etree.ElementTree as ET
 import re
 import difflib
-import os
 import concurrent.futures
 from functools import lru_cache
 from datetime import datetime, timedelta, timezone
@@ -39,7 +38,7 @@ LINK_UPCOMING = "https://bwifi.my.id/5menit.mp4"
 GLOBAL_SEEN_STREAM_URLS = set()
 
 # ========================================================
-# 2. MESIN MAPPING CERDAS KITA (Kamus Link & Rumus)
+# 2. MESIN MAPPING CERDAS & PENERJEMAH BAHASA
 # ========================================================
 COMPILED_MAPPING = []
 
@@ -78,6 +77,28 @@ def rumus_samakan_teks(teks):
 
 CACHE_FUZZY = {}
 
+@lru_cache(maxsize=5000)
+def terjemahkan_bahasa(title):
+    """Sultan Translator: Mengubah bahasa asing menjadi Indonesia & merapikan 'vs'"""
+    t = title
+    kamus_asing = {
+        "fudbal": "Sepakbola", "nogomet": "Sepakbola", "odbojka": "Voli", "košarka": "Basket",
+        "italijanska liga": "Liga Italia", "engleska liga": "Liga Inggris", 
+        "španska liga": "Liga Spanyol", "francuska liga": "Liga Prancis",
+        "nemačka liga": "Liga Jerman", "njemačka liga": "Liga Jerman",
+        "liga prvaka": "Liga Champions", "liga prvakov": "Liga Champions",
+        "evropska liga": "Liga Europa", "europska liga": "Liga Europa",
+        "zlatna liga": "Liga Emas", "rukomet": "Bola Tangan", "hokej": "Hoki",
+        "tenis": "Tenis"
+    }
+    
+    for asing, indo in kamus_asing.items():
+        t = re.sub(r'(?i)\b' + asing + r'\b', indo, t)
+    
+    # Ubah "Tim A - Tim B" menjadi "Tim A vs Tim B" di awal kalimat
+    t = re.sub(r'^([A-Za-z0-9\s]+)\s+-\s+([A-Za-z0-9\s]+)([\.,]|$)', r'\1 vs \2\3', t)
+    return t
+
 # ========================================================
 # 3. ATURAN SULTAN, FILTER BENUA & BUKU SEJARAH
 # ========================================================
@@ -89,7 +110,8 @@ REGEX_EVENT = re.compile(r'(?:^|[^0-9])(\d{2})[:\.](\d{2})\s*(?:WIB)?\s*[\-\|]?\
 @lru_cache(maxsize=5000)
 def bersihkan_judul_event(title):
     bersih = REGEX_LIVE.sub('', title)
-    return re.sub(r'^[\-\:\,\|]\s*', '', re.sub(r'\s+', ' ', bersih)).strip()
+    bersih = re.sub(r'^[\-\:\,\|]\s*', '', re.sub(r'\s+', ' ', bersih)).strip()
+    return terjemahkan_bahasa(bersih) # Panggil penerjemah di sini
 
 def generate_event_key(title, timestamp):
     tc = re.sub(r'(?i)\#\s*\d+|\[.*?\]|\(.*?\)', '', title)
@@ -166,12 +188,11 @@ def parse_time(ts):
         if len(ts) >= 19 and ('+' in ts or '-' in ts):
             dt = datetime.strptime(ts[:20].strip(), "%Y%m%d%H%M%S %z")
             return dt.astimezone(timezone(timedelta(hours=7))).replace(tzinfo=None)
-        # PERBAIKAN BUG: Jika tidak ada zona waktu, anggap sudah WIB (Lokal). Jangan ditambah 7 jam!
         return datetime.strptime(ts[:14], "%Y%m%d%H%M%S")
     except: return None
 
 def fetch_url(url, is_epg):
-    headers = {'Cache-Control': 'no-cache', 'Pragma': 'no-cache'} # Anti Cache
+    headers = {'Cache-Control': 'no-cache', 'Pragma': 'no-cache'}
     try:
         if "epgshare" in url:
             scraper = cloudscraper.create_scraper(browser={'browser': 'chrome', 'platform': 'windows', 'desktop': True})
@@ -209,8 +230,8 @@ def get_provider_name(url):
 load_mapping() 
 
 now_wib = datetime.utcnow() + timedelta(hours=7)
-limit_date = now_wib + timedelta(hours=24) # Scan kalender 24 jam ke depan dengan aman
-limit_past = now_wib - timedelta(days=2) # Buku Sejarah membaca mundur hingga 48 jam
+limit_date = now_wib + timedelta(hours=24) 
+limit_past = now_wib - timedelta(days=2) 
 
 epg_dict = {} 
 kamus_rumus_epg = {}
@@ -253,27 +274,21 @@ for url, content in epg_contents.items():
             if not st or not sp: continue
             judul_bersih = bersihkan_judul_event(title).lower()
             
-            # --- MESIN BUKU SEJARAH (Mengecek Hari Kemarin) ---
             if limit_past <= sp < now_wib:
                 if is_allowed_sport(title, durasi):
-                    # Hanya catat judul spesifik (misal ada unsur "vs" atau lebih dari 2 kata) agar tidak memblokir judul umum
                     if " vs " in judul_bersih or " v " in judul_bersih or len(judul_bersih.split()) >= 3:
                         buku_sejarah_replay.add(judul_bersih)
                 continue
             
-            # Buang yang sudah kelewat jam tayangnya atau terlalu jauh di masa depan
             if sp <= now_wib or st >= limit_date: continue 
-            
-            # --- DETEKSI SIARAN ULANG HARI INI ---
-            if judul_bersih in buku_sejarah_replay:
-                continue # BLOKIR! Ini adalah siaran ulang (replay) dari pertandingan kemarin
+            if judul_bersih in buku_sejarah_replay: continue 
             
             w = st.hour + (st.minute / 60.0)
             if is_allowed_sport(title, durasi) and is_valid_time_continent(w, title, epg_dict[cid]):
                 if cid not in jadwal_dict: jadwal_dict[cid] = []
                 logo = pg.find("icon").get("src") if pg.find("icon") is not None else ""
                 jadwal_dict[cid].append({
-                    "title": bersihkan_judul_event(title),
+                    "title": bersihkan_judul_event(title), # Ini sudah diterjemahkan otomatis
                     "start": st, "stop": sp, "live": (st - timedelta(minutes=5)) <= now_wib < sp,
                     "logo": logo
                 })
@@ -287,7 +302,7 @@ audit_m3u = {}
 print("3. Mencocokkan M3U dengan Jadwal Sultan & Audit Laporan Berwarna...")
 for url in M3U_URLS:
     provider_name = get_provider_name(url)
-    audit_m3u[provider_name] = []
+    audit_m3u[provider_name] = [] # Pastikan provider selalu terdaftar di laporan
     
     content = m3u_contents.get(url)
     if not content: continue
@@ -325,7 +340,6 @@ for url in M3U_URLS:
                 if not clean_attrs.upper().startswith("#EXTINF"):
                     clean_attrs = "#EXTINF:-1 " + clean_attrs.replace('#EXTINF:-1', '').replace('#EXTINF:0', '').strip()
 
-                # --- EKSEKUSI EVENT DADAKAN ---
                 if ev_m:
                     hh, mm = int(ev_m.group(1)), int(ev_m.group(2))
                     ev_title = re.sub(r'(?i)\#\s*\d+|\[.*?\]|\(.*?\)', '', ev_m.group(3)).strip()
@@ -341,11 +355,11 @@ for url in M3U_URLS:
                         
                         jam_tayang = f"{ev_start.strftime('%H:%M')}-{ev_stop.strftime('%H:%M')}"
                         if is_live:
-                            judul = f"{get_flag(ev_title)} 🔴 {jam_tayang} WIB - {ev_title}"
+                            judul = f"{get_flag(ev_title)} 🔴 {jam_tayang} WIB - {terjemahkan_bahasa(ev_title)}"
                             inf = f'{clean_attrs} group-title="🔴 SEDANG TAYANG" tvg-id="" tvg-logo="{orig_logo}", {judul}'
                             keranjang_match[key]["links"].append({"prio": 0, "data": [inf] + extra_tags + [stream_url]})
                         else:
-                            judul = f"{get_flag(ev_title)} ⏳ {jam_tayang} WIB - {ev_title}"
+                            judul = f"{get_flag(ev_title)} ⏳ {jam_tayang} WIB - {terjemahkan_bahasa(ev_title)}"
                             inf = f'#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="{orig_logo}", {judul}'
                             keranjang_match[key]["links"].append({"prio": 0, "data": [inf, f"{LINK_UPCOMING}?m={key}"]})
                         
@@ -354,13 +368,11 @@ for url in M3U_URLS:
                         audit_m3u[provider_name].append(f"🟤 **[BASI]** {m3u_name} (EVENT) diblokir (SUDAH KADALUARSA)")
                     continue
 
-                # --- EKSEKUSI CHANNEL M3U ---
                 tvg_id_match = re.search(r'tvg-id="([^"]*)"', raw_attrs)
                 id_m3u = tvg_id_match.group(1).strip() if tvg_id_match else ""
-                
                 id_bawaan = id_m3u if id_m3u else m3u_name
-                teks_m3u_dirumus = rumus_samakan_teks(id_bawaan) or rumus_samakan_teks(m3u_name)
                 
+                teks_m3u_dirumus = rumus_samakan_teks(id_bawaan) or rumus_samakan_teks(m3u_name)
                 id_epg_terpilih = ""
                 metode = ""
                 kandidat_id = None
@@ -394,7 +406,6 @@ for url in M3U_URLS:
                     else:
                             id_epg_terpilih = kandidat_id
 
-                # --- PENCATATAN LAPORAN BERWARNA ---
                 if id_epg_terpilih and id_epg_terpilih in jadwal_dict:
                     punya_jadwal = False
                     for ev in jadwal_dict[id_epg_terpilih]:
@@ -427,9 +438,23 @@ for url in M3U_URLS:
     except Exception as e:
         print(f"Error memproses M3U {url}: {e}")
 
-print("4. Merender M3U Final dan Laporan Markdown...")
+print("4. Merender M3U Final dengan Anti-Kloning Hari Ini...")
+waktu_paling_awal = {}
+for key, match in keranjang_match.items():
+    nama_unik = key.rsplit('_', 1)[0]
+    if nama_unik not in waktu_paling_awal:
+        waktu_paling_awal[nama_unik] = match["sort"]
+    else:
+        if match["sort"] < waktu_paling_awal[nama_unik]:
+            waktu_paling_awal[nama_unik] = match["sort"]
+
 hasil_render = []
 for key, match in keranjang_match.items():
+    nama_unik = key.rsplit('_', 1)[0]
+    
+    if match["sort"] > waktu_paling_awal[nama_unik] + 10800:
+        continue 
+
     links = match["links"]
     unique_links = { l["data"][-1]: l for l in links }.values() 
     sorted_links = sorted(unique_links, key=lambda x: x["prio"])
@@ -458,11 +483,15 @@ with open("laporan_channel_m3u.md", "w", encoding="utf-8") as f:
     f.write(f"**Diperbarui pada:** {now_wib.strftime('%d-%m-%Y %H:%M WIB')}\n\n")
     
     for provider, laporan in audit_m3u.items():
-        if not laporan: continue 
         f.write(f"### 📁 SUMBER: {provider}\n")
-        laporan_sorted = sorted(laporan, key=lambda x: 0 if "🟢" in x or "🟡" in x or "🟣" in x else 1)
-        for baris in laporan_sorted:
-            f.write(f"- {baris}\n")
+        
+        # Jika laporan kosong sama sekali, beri keterangan wajib cetak
+        if not laporan:
+            f.write("- ⚪ Tidak ada channel olahraga target atau link mati.\n")
+        else:
+            laporan_sorted = sorted(laporan, key=lambda x: 0 if "🟢" in x or "🟡" in x or "🟣" in x else 1)
+            for baris in laporan_sorted:
+                f.write(f"- {baris}\n")
         f.write("\n---\n\n")
 
-print(f"SELESAI! Buku Sejarah Aktif, Siaran Ulang Dibasmi, Zona Waktu Sempurna!")
+print(f"SELESAI! Laporan pasti tercetak & Bahasa Asing otomatis diterjemahkan!")
