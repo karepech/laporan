@@ -38,9 +38,9 @@ LINK_UPCOMING = "https://bwifi.my.id/5menit.mp4"
 GLOBAL_SEEN_STREAM_URLS = set()
 
 # ========================================================
-# 2. MESIN MAPPING CERDAS KITA (Kamus, Rumus & Cache)
+# 2. MESIN MAPPING CERDAS KITA (Kamus & Rumus)
 # ========================================================
-@lru_cache(maxsize=10000) # CACHE: Ingat teks yang sudah dirumus
+@lru_cache(maxsize=10000) 
 def rumus_samakan_teks(teks):
     if not teks: return ""
     teks = teks.lower()
@@ -58,11 +58,10 @@ if os.path.exists("kamus_mapping.txt"):
                 if len(parts) == 3:
                     kamus_manual[parts[1].strip().lower()] = {"epg": parts[0].strip(), "nama": parts[2].strip()}
 
-# Sistem Ingatan Fuzzy Matching agar tidak berat
 CACHE_FUZZY = {}
 
 # ========================================================
-# 3. ATURAN SULTAN & FILTER BENUA
+# 3. ATURAN SULTAN, FILTER BENUA & BUKU SEJARAH
 # ========================================================
 REGEX_LIVE = re.compile(r'(?i)(\(l\)|\[l\]|\(d\)|\[d\]|\(r\)|\[r\]|\blive\b|\blangsung\b|\blive on\b)')
 REGEX_VS = re.compile(r'\b(vs|v)\b')
@@ -109,25 +108,29 @@ def get_region_ktp(name, epg_id=""):
     return "UNKNOWN"
 
 @lru_cache(maxsize=5000)
+def is_target_sport_channel(name):
+    """SATPAM PINTU MASUK: Buang VOD, Movie, Kids, News dll."""
+    n = name.lower()
+    sampah = ['movie', 'cinema', 'film', 'drama', 'kids', 'news', 'music', 'kompas', 'tvone', 'metro', 'berita', 'religi', 'alquran', 'fashion', 'animal', 'history', 'discovery', 'natgeo', 'kartun', 'cartoon', 'hbo', 'fox movies', 'cinemax', 'axn']
+    if any(x in n for x in sampah): return False
+    target = ['sport', 'bein', 'spotv', 'liga', 'league', 'champions', 'premier', 'serie a', 'bundesliga', 'la liga', 'badminton', 'bwf', 'motogp', 'moto2', 'moto3', 'f1', 'formula', 'wsbk', 'nba', 'nfl', 'mls', 'basket', 'voli', 'volley', 'tennis', 'tenis', 'rugby', 'afc', 'afcon', 'concacaf', 'sudamericana', 'libertadores', 'soccer', 'arena', 'espn', 'fox', 'tsn', 'dazn', 'eleven', 'supersport', 'setanta', 'tnt', 'optus', 'astro super', 'true premier', 'ssc', 'rcti', 'sctv', 'mnc', 'indosiar', 'inews']
+    return any(t in n for t in target)
+
+@lru_cache(maxsize=5000)
 def is_allowed_sport(title, durasi_menit):
     t = title.lower()
     if re.search(r'[А-Яа-яЁё\u4e00-\u9fff\u3040-\u30ff\u0600-\u06ff]', t) or durasi_menit <= 30: return False
-    
     haram_simbol = ["(d)", "[d]", "(r)", "[r]", "(c)", "[c]", "hls", "hl ", "h/l", "rev ", "rep ", "del "]
     if any(s in t for s in haram_simbol): return False
-    
     haram_kata = ["replay", "delay", "re-run", "rerun", "recorded", "archives", "classic", "rewind", "encore", "highlights", "best of", "compilation", "collection", "pre-match", "post-match", "build-up", "build up", "preview", "review", "road to", "kick-off show", "warm up", "magazine", "studio", "talk", "show", "update", "weekly", "planet", "mini match", "mini", "life", "documentary", "tunda", "siaran tunda", "tertunda", "ulang", "siaran ulang", "tayangan ulang", "ulangan", "rakaman", "cuplikan", "sorotan", "rangkuman", "ringkasan", "kilas", "lensa", "jurnal", "terbaik", "pilihan", "pemanasan", "menuju kick off", "pra-perlawanan", "pasca-perlawanan", "sepak mula", "dokumenter", "obrolan", "bincang", "berita", "news", "apa kabar", "religi", "quran", "mekkah", "masterchef", "cgtn", "arirang", "cnn", "lfctv", "mutv", "chelsea tv", "re-live", "relive", "history", "retro", "memories", "greatest", "wwe", "ufc", "mma", "boxing", "fight", "fightesport", "esport", "e-sport", "smackdown", "raw", "one championship", "golf", "snooker", "biliar", "billiard", "panahan", "archery", "renang", "swimming", "sepeda", "cycling", "gulat", "darts", "atletik", "athletics", "gymnastic"]
     if re.search(r'\b(?:' + '|'.join(haram_kata) + r')\b', t): return False
-    
     target_kws = ['vs', 'liga', 'league', 'cup', 'copa', 'championship', 'badminton', 'bwf', 'thomas', 'uber', 'sudirman', 'motogp', 'moto2', 'moto3', 'f1', 'formula', 'wsbk', 'nba', 'nfl', 'mls', 'basket', 'voli', 'volley', 'tennis', 'tenis', 'rugby', 'baseball', 'afc', 'afcon', 'concacaf', 'sudamericana', 'libertadores', 'premier', 'serie a', 'bundesliga', 'la liga']
     if not any(k in t for k in target_kws): return False
-    
     return True
 
 @lru_cache(maxsize=5000)
 def is_valid_time_continent(w, title, ch_name):
     t = (title + " " + ch_name).lower()
-    
     if any(k in t for k in [' uk', 'england', 'sky', 'euro', 'uefa', 'champions league', 'la liga', 'serie a', 'bundesliga', 'prancis', 'epl', 'premier league']):
         if 5.1 <= w <= 17.9: return False
     if any(k in t for k in ['us ', 'usa', 'america', 'mls', 'nba', 'nfl', 'concacaf', 'libertadores', 'sudamericana', 'copa', 'brasil', 'argentina', 'mexico']):
@@ -149,7 +152,6 @@ def parse_time(ts):
         return datetime.strptime(ts[:14], "%Y%m%d%H%M%S") + timedelta(hours=7)
     except: return None
 
-# Fungsi Download Multithread
 def fetch_url(url, is_epg):
     try:
         if "epgshare" in url:
@@ -168,21 +170,37 @@ def fetch_url(url, is_epg):
         print(f"❌ Gagal Download {url}: {e}")
         return url, None, is_epg
 
+def get_provider_name(url):
+    """Mengubah Link M3U menjadi Nama Penyedia Rapi"""
+    if "aspaltvpasti" in url: return "ASPALT TV PASTI"
+    if "deccotech" in url: return "DECOTECH"
+    if "freeiptv" in url: return "FREE IPTV 2026"
+    if "T2" in url: return "T2 PLAYLIST"
+    if "sauridigital" in url: return "SAURI DIGITAL"
+    if "mimipipi22" in url: return "LAJOJO"
+    if "semar25" in url: return "SEMAR 25"
+    if "TVKITKAT" in url: return "TV KITKAT"
+    if "iptvbonekoe" in url: return "BONEKOE"
+    if "bwifi" in url: return "BWIFI LOKAL"
+    if "KPL203" in url: return "KPL 203"
+    return url.split('/')[-1].upper()
+
 # ========================================================
 # 4. EKSEKUSI GABUNGAN
 # ========================================================
 now_wib = datetime.utcnow() + timedelta(hours=7)
 limit_date = now_wib.replace(hour=3, minute=0, second=0, microsecond=0) if now_wib.hour < 3 else (now_wib + timedelta(days=1)).replace(hour=3, minute=0, second=0, microsecond=0)
+limit_past = now_wib - timedelta(days=2) # Mundur 48 jam untuk Buku Sejarah
 
 epg_dict = {} 
 kamus_rumus_epg = {}
 jadwal_dict = {} 
+buku_sejarah_replay = set() # Mengingat judul yang sudah tayang kemarin
 
 print("1. Mendownload EPG dan M3U secara serentak (Turbo Mode)...")
 epg_contents = {}
 m3u_contents = {}
 
-# Jalan Tol: Download 13 URL Serentak
 with concurrent.futures.ThreadPoolExecutor(max_workers=15) as executor:
     futures = [executor.submit(fetch_url, url, True) for url in EPG_URLS]
     futures += [executor.submit(fetch_url, url, False) for url in M3U_URLS]
@@ -193,7 +211,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=15) as executor:
             if is_epg: epg_contents[url] = content
             else: m3u_contents[url] = content
 
-print("2. Memproses Data EPG...")
+print("2. Memproses Data EPG & Membangun Buku Sejarah...")
 for url, content in epg_contents.items():
     try:
         root = ET.fromstring(content)
@@ -210,9 +228,24 @@ for url, content in epg_contents.items():
             if cid not in epg_dict: continue
             st, sp = parse_time(pg.get("start")), parse_time(pg.get("stop"))
             title = pg.findtext("title") or ""
+            durasi = (sp - st).total_seconds() / 60 if st and sp else 0
             
-            if not st or not sp or sp <= now_wib or st >= limit_date: continue 
-            durasi = (sp - st).total_seconds() / 60
+            if not st or not sp: continue
+            
+            judul_bersih = bersihkan_judul_event(title).lower()
+            
+            # A. CATAT BUKU SEJARAH (Acara yang sudah lewat)
+            if limit_past <= sp < now_wib:
+                if is_allowed_sport(title, durasi):
+                    buku_sejarah_replay.add(judul_bersih)
+                continue
+            
+            # B. JADWAL HARI INI / MASA DEPAN
+            if sp <= now_wib or st >= limit_date: continue 
+            
+            # Cek apakah judul ini ada di buku sejarah kemarin? (Deteksi Siaran Ulang Murni)
+            if judul_bersih in buku_sejarah_replay:
+                continue # BLOKIR! Ini adalah siaran ulang yang menyamar.
             
             w = st.hour + (st.minute / 60.0)
             if is_allowed_sport(title, durasi) and is_valid_time_continent(w, title, epg_dict[cid]):
@@ -228,14 +261,13 @@ for url, content in epg_contents.items():
 
 daftar_teks_epg_dirumus = list(kamus_rumus_epg.keys())
 keranjang_match = {}
-
-log_rumus = []
 audit_m3u = {}
 
-print("3. Mencocokkan M3U dengan Jadwal Sultan & Audit...")
-# Looping berurutan agar prioritas terjaga
+print("3. Mencocokkan M3U dengan Jadwal Sultan & Audit Laporan...")
 for url in M3U_URLS:
-    audit_m3u[url] = {"ada": [], "tidak": []}
+    provider_name = get_provider_name(url)
+    audit_m3u[provider_name] = []
+    
     content = m3u_contents.get(url)
     if not content: continue
     
@@ -254,11 +286,17 @@ for url in M3U_URLS:
                 
                 if not raw_extinf or "," not in raw_extinf: continue
                 stream_url = ln
+                raw_attrs, m3u_name = raw_extinf.split(",", 1)
+                m3u_name = m3u_name.strip()
+                
+                # SATPAM PINTU MASUK: Bypass channel non-olahraga
+                ev_m = REGEX_EVENT.search(m3u_name)
+                if not ev_m and not is_target_sport_channel(m3u_name):
+                    continue 
+                
                 if stream_url in GLOBAL_SEEN_STREAM_URLS: continue
                 GLOBAL_SEEN_STREAM_URLS.add(stream_url)
                 
-                raw_attrs, m3u_name = raw_extinf.split(",", 1)
-                m3u_name = m3u_name.strip()
                 logo_match = re.search(r'(?i)tvg-logo=["\']([^"\']*)["\']', raw_attrs)
                 orig_logo = logo_match.group(1) if logo_match else ""
                 skor_vip = get_vip_score(m3u_name)
@@ -267,7 +305,7 @@ for url in M3U_URLS:
                 if not clean_attrs.upper().startswith("#EXTINF"):
                     clean_attrs = "#EXTINF:-1 " + clean_attrs.replace('#EXTINF:-1', '').replace('#EXTINF:0', '').strip()
 
-                ev_m = REGEX_EVENT.search(m3u_name)
+                # --- EKSEKUSI EVENT DADAKAN ---
                 if ev_m:
                     hh, mm = int(ev_m.group(1)), int(ev_m.group(2))
                     ev_title = re.sub(r'(?i)\#\s*\d+|\[.*?\]|\(.*?\)', '', ev_m.group(3)).strip()
@@ -291,15 +329,19 @@ for url in M3U_URLS:
                             inf = f'#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="{orig_logo}", {judul}'
                             keranjang_match[key]["links"].append({"prio": 0, "data": [inf, f"{LINK_UPCOMING}?m={key}"]})
                         
-                        audit_m3u[url]["ada"].append(f"{m3u_name} ➡️ [ADA] (Event Otomatis)")
+                        audit_m3u[provider_name].append(f"{m3u_name} ({m3u_name}) cocok id epg (EVENT OTOMATIS)")
                     else:
-                        audit_m3u[url]["tidak"].append(f"{m3u_name} ➡️ [TIDAK] (Event Kadaluarsa)")
+                        audit_m3u[provider_name].append(f"{m3u_name} ({m3u_name}) tidak cocok id epg (KADALUARSA)")
                     continue
 
+                # --- EKSEKUSI CHANNEL M3U ---
                 tvg_id_match = re.search(r'tvg-id="([^"]*)"', raw_attrs)
                 id_m3u = tvg_id_match.group(1).strip() if tvg_id_match else ""
                 
-                kunci_manual = id_m3u.lower() if id_m3u.lower() in kamus_manual else m3u_name.lower()
+                # FALLBACK LOGIC: Jika tvg-id kosong, pakai nama channel
+                id_bawaan = id_m3u if id_m3u else m3u_name
+                
+                kunci_manual = id_bawaan.lower() if id_bawaan.lower() in kamus_manual else m3u_name.lower()
                 id_epg_terpilih = ""
                 metode = ""
                 
@@ -307,24 +349,20 @@ for url in M3U_URLS:
                     id_epg_terpilih = kamus_manual[kunci_manual]["epg"]
                     metode = "KAMUS MANUAL"
                 else:
-                    teks_m3u_dirumus = rumus_samakan_teks(id_m3u) or rumus_samakan_teks(m3u_name)
+                    teks_m3u_dirumus = rumus_samakan_teks(id_bawaan) or rumus_samakan_teks(m3u_name)
                     kandidat_id = None
                     
                     if teks_m3u_dirumus in kamus_rumus_epg:
                         kandidat_id = kamus_rumus_epg[teks_m3u_dirumus]
                         metode = "RUMUS EXACT"
                     else:
-                        # CACHE FUZZY: Hanya mencari jika belum pernah dicari sebelumnya
                         if teks_m3u_dirumus not in CACHE_FUZZY:
                             CACHE_FUZZY[teks_m3u_dirumus] = difflib.get_close_matches(teks_m3u_dirumus, daftar_teks_epg_dirumus, n=3, cutoff=0.8)
-                        
                         mirip = CACHE_FUZZY[teks_m3u_dirumus]
-                        
                         for m in mirip:
                             temp_id = kamus_rumus_epg[m]
                             ktp_epg = get_region_ktp(epg_dict.get(temp_id, ""), temp_id)
                             ktp_m3u = get_region_ktp(m3u_name)
-                            
                             if 'bein' in temp_id.lower() or 'spotv' in temp_id.lower():
                                 if (ktp_epg if ktp_epg != "UNKNOWN" else "ID") == (ktp_m3u if ktp_m3u != "UNKNOWN" else "ID"):
                                     kandidat_id = temp_id
@@ -332,7 +370,7 @@ for url in M3U_URLS:
                             elif ktp_epg == "UNKNOWN" or ktp_m3u == "UNKNOWN" or ktp_epg == ktp_m3u:
                                 kandidat_id = temp_id
                                 break
-                        metode = "RUMUS FUZZY" if kandidat_id else ""
+                        if kandidat_id: metode = "RUMUS FUZZY"
                                 
                     if kandidat_id:
                         if not ('bein' in kandidat_id.lower() or 'spotv' in kandidat_id.lower()):
@@ -343,10 +381,11 @@ for url in M3U_URLS:
                         else:
                              id_epg_terpilih = kandidat_id
 
+                # --- PENCATATAN LAPORAN SESUAI FORMAT ---
                 if id_epg_terpilih and id_epg_terpilih in jadwal_dict:
-                    punya_jadwal_aktif = False
+                    punya_jadwal = False
                     for ev in jadwal_dict[id_epg_terpilih]:
-                        punya_jadwal_aktif = True
+                        punya_jadwal = True
                         key = generate_event_key(ev['title'], ev['start'].timestamp())
                         if key not in keranjang_match: 
                             keranjang_match[key] = {"is_live": ev['live'], "sort": ev['start'].timestamp(), "vip": skor_vip, "links": []}
@@ -364,17 +403,14 @@ for url in M3U_URLS:
                             inf = f'#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="{final_logo}", {judul_pendek}'
                             keranjang_match[key]["links"].append({"prio": 1, "data": [inf, f"{LINK_UPCOMING}?m={key}"]})
                     
-                    if punya_jadwal_aktif:
-                        log_rumus.append(f"✅ [{metode}] {m3u_name} -> {epg_dict[id_epg_terpilih]}")
-                        audit_m3u[url]["ada"].append(f"{m3u_name} ➡️ [ADA] (Cocok dengan: {epg_dict[id_epg_terpilih]})")
+                    if punya_jadwal:
+                        if metode == "KAMUS MANUAL": audit_m3u[provider_name].append(f"{m3u_name} ({id_bawaan}) cocok [manual] ({id_epg_terpilih})")
+                        elif metode == "RUMUS FUZZY": audit_m3u[provider_name].append(f"{m3u_name} ({id_bawaan}) cocok [fuzzy] ({id_epg_terpilih})")
+                        else: audit_m3u[provider_name].append(f"{m3u_name} ({id_bawaan}) cocok id epg ({id_epg_terpilih})")
                     else:
-                        audit_m3u[url]["tidak"].append(f"{m3u_name} ➡️ [TIDAK] (EPG cocok, tapi jadwal kosong)")
+                        audit_m3u[provider_name].append(f"{m3u_name} ({id_bawaan}) tidak cocok id epg (KOSONG - Jadwal Habis/Dihapus Filter)")
                 else:
-                    if id_epg_terpilih:
-                        audit_m3u[url]["tidak"].append(f"{m3u_name} ➡️ [TIDAK] (EPG cocok, tapi jadwal kosong/dihapus filter)")
-                    else:
-                        audit_m3u[url]["tidak"].append(f"{m3u_name} ➡️ [TIDAK] (Tidak ada EPG yang cocok)")
-                    log_rumus.append(f"❌ KOSONG: {m3u_name}")
+                    audit_m3u[provider_name].append(f"{m3u_name} ({id_bawaan}) tidak cocok id epg (KOSONG)")
                     
     except Exception as e:
         print(f"Error memproses M3U {url}: {e}")
@@ -397,6 +433,7 @@ for key, match in keranjang_match.items():
 
 hasil_render.sort(key=lambda x: (x["order"], float(x["sort"]), x["vip"]))
 
+# Cetak File Utama (M3U)
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     f.write(f'#EXTM3U name="🔴 BAKUL WIFI SPORTS"\n')
     if not hasil_render: 
@@ -405,19 +442,16 @@ with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         for it in hasil_render: 
             f.write("\n".join(it["data"]) + "\n")
 
-with open("laporan_rumus.txt", "w", encoding="utf-8") as f:
-    f.write("\n".join(log_rumus))
-
+# Cetak Laporan Audit Channel (Per Penyedia M3U)
 with open("laporan_channel_m3u.txt", "w", encoding="utf-8") as f:
     f.write("=== LAPORAN AUDIT CHANNEL BAKUL WIFI SPORTS ===\n")
     f.write(f"Diperbarui pada: {now_wib.strftime('%d-%m-%Y %H:%M WIB')}\n\n")
     
-    for link, data in audit_m3u.items():
-        f.write(f"📁 SUMBER: {link.split('/')[-1] if not link.endswith('php') and not link.endswith('html') else link}\n")
-        f.write("-" * 50 + "\n")
-        for item in data["ada"]: f.write(f"  {item}\n")
-        for item in data["tidak"]: f.write(f"  {item}\n")
-        f.write("-" * 50 + "\n")
-        f.write(f"*Total dari sumber ini: {len(data['ada'])} channel sinkron, {len(data['tidak'])} channel kosong/mati.*\n\n")
+    for provider, laporan in audit_m3u.items():
+        if not laporan: continue 
+        f.write(f"**{provider}**\n")
+        for baris in laporan:
+            f.write(f"{baris}\n")
+        f.write("\n")
 
-print(f"SELESAI! Tiga file berhasil dibuat dengan mode Turbo!")
+print(f"SELESAI! Buku Sejarah Aktif, Siaran Ulang Dibasmi, Laporan Rapi!")
