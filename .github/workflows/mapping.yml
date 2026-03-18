@@ -1,0 +1,38 @@
+name: Generate EPG Mapping
+
+on:
+  workflow_dispatch: # Tetap bisa dijalankan manual pakai tombol
+  push:
+    branches:
+      - main # Berjalan otomatis setiap kali ada perubahan file di repositori (branch main)
+  schedule:
+    - cron: '0 * * * *' # Berjalan otomatis setiap 1 jam
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests cloudscraper
+
+      - name: Jalankan Skrip Mapper
+        run: python mapper.py
+
+      - name: Commit dan Push Hasil Mapping
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add playlist_termapping.m3u laporan_rumus.txt laporan_channel_m3u.txt
+          git commit -m "Update M3U ter-mapping dan laporan" || echo "Tidak ada perubahan"
+          git push
