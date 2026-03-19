@@ -1,4 +1,4 @@
-import requests
+Import requests
 import cloudscraper
 import gzip
 import xml.etree.ElementTree as ET
@@ -27,6 +27,7 @@ M3U_URLS = [
 ]
 EPG_URLS = [
     "https://raw.githubusercontent.com/AqFad2811/epg/main/indonesia.xml",
+"https://epgshare01.online/epgshare01/epg_ripper_ALL_SPORTS.xml.gz",
     "https://epg.pw/xmltv/epg.xml.gz"
 ]
 
