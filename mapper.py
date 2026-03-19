@@ -177,13 +177,20 @@ def is_valid_time_continent(w, title, ch_name):
         if 4.1 <= w <= 18.9: return False
     return True
 
-def parse_time(ts):
+def parse_time(ts, default_offset_hours=0):
     if not ts: return None
     try:
+        # 1. Jika EPG sudah punya timezone spesifik (contoh: +0000, +0700)
         if len(ts) >= 19 and ('+' in ts or '-' in ts):
             dt = datetime.strptime(ts[:20].strip(), "%Y%m%d%H%M%S %z")
             return dt.astimezone(timezone(timedelta(hours=7))).replace(tzinfo=None)
-        return datetime.strptime(ts[:14], "%Y%m%d%H%M%S") + timedelta(hours=7)
+        
+        # 2. Jika EPG TIDAK PUNYA timezone
+        dt_naive = datetime.strptime(ts[:14], "%Y%m%d%H%M%S")
+        
+        # Penyesuaian ke WIB (UTC+7) dengan mengkalkulasi offset lokal bawaan file
+        dt_wib = dt_naive + timedelta(hours=(7 - default_offset_hours))
+        return dt_wib
     except: return None
 
 def fetch_url(url, is_epg):
@@ -236,10 +243,15 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=15) as executor:
             if is_epg: epg_contents[url] = content
             else: m3u_contents[url] = content
 
-print("2. Memproses Data EPG (Streaming Memory & Early Sports Filter)...")
+print("2. Memproses Data EPG (Streaming Memory & Adaptasi Zona Waktu Lokal)...")
 for url, content in epg_contents.items():
+    
+    # --- DETEKSI WAKTU LOKAL EPG SANA ---
+    offset_sana = 0 # Default anggap UTC (seperti epgshare atau epg.pw)
+    if "AqFad2811" in url or "indonesia.xml" in url:
+        offset_sana = 7 # Anggap waktu lokal EPG ini sudah murni WIB (UTC+7)
+        
     try:
-        # Menggunakan iterparse untuk menghemat RAM secara drastis
         context = ET.iterparse(BytesIO(content), events=('end',))
         for event, elem in context:
             if elem.tag == 'channel':
@@ -260,8 +272,9 @@ for url, content in epg_contents.items():
                 title_elem = elem.find("title")
                 title = title_elem.text if title_elem is not None else ""
                 
-                st = parse_time(elem.get("start"))
-                sp = parse_time(elem.get("stop"))
+                # --- PANGGIL PARSE TIME DENGAN OFFSET LOKAL SANA ---
+                st = parse_time(elem.get("start"), offset_sana)
+                sp = parse_time(elem.get("stop"), offset_sana)
                 durasi = (sp - st).total_seconds() / 60 if st and sp else 0
                 
                 # FILTERING CEPAT: Jika bukan olahraga, langsung buang dari RAM!
@@ -464,4 +477,19 @@ with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         for it in hasil_render: 
             f.write("\n".join(it["data"]) + "\n")
 
-print(f"SELESAI! Skrip Ringan dan Cepat Dieksekusi!")
+with open("laporan_channel_m3u.md", "w", encoding="utf-8") as f:
+    f.write("# LAPORAN AUDIT CHANNEL BAKUL WIFI SPORTS\n")
+    f.write(f"**Diperbarui pada:** {now_wib.strftime('%d-%m-%Y %H:%M WIB')}\n\n")
+    
+    for provider, laporan in audit_m3u.items():
+        f.write(f"### 📁 SUMBER: {provider}\n")
+        
+        if not laporan:
+            f.write("- ⚪ Tidak ada channel olahraga target atau link mati.\n")
+        else:
+            laporan_sorted = sorted(laporan, key=lambda x: 0 if "🟢" in x or "🟡" in x or "🟣" in x else 1)
+            for baris in laporan_sorted:
+                f.write(f"- {baris}\n")
+        f.write("\n---\n\n")
+
+print(f"SELESAI! Skrip Ringan dan Waktu Super Presisi Dieksekusi!")
