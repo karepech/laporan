@@ -3,8 +3,6 @@
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=0bbb23a5ad81427fa6817864b2383402:81e055a8d6ddf6392ae9033f0f037b98
 https://load.perfecttv.net/rwt.mpd?username=vip_3klp0es8&password=wg3piwEs&channel=badmintonhd|user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
-#EXTINF:-1 radio="false" group-title="🔴 SEDANG TAYANG" tvg-id="12434" tvg-logo="https://i.ibb.co/JyPnwvB/sky-cricket.png", 🇬🇧 🔴 22:30-02:45 WIB - Indian Premier League [SKY SPORTS CRICKET]
-http://kstv.us:8080/4VUyfZBQzk/95104974615/47864
 #EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="537753" tvg-logo="https://poster.starhubgo.com/Linear_channels2/204_1920x1080_HTV.png?w=272", 📺 🔴 00:00-03:50 WIB - TATA Indian Premier League 2026 () – M29: Punjab Kings vs Lucknow Super Giants [Hub Sports 4 HD]
 https://hls.iill.top/api/Hub-Sports-4/index.m3u8
 #EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="537791" tvg-logo="https://poster.starhubgo.com/Linear_channels2/223_1920x1080_HTV.png?w=272", 📺 🔴 00:00-02:50 WIB - Aston Villa vs Sunderland (MW33) () – Premier League 2025/26 [Hub Premier3 HD]
@@ -36,10 +34,6 @@ https://dash3.antik.sk/stream/nvidia_joj_sport/playlist_cbcs.mpd
 https://dash3.antik.sk/stream/nvidia_joj_sport_2/playlist_cbcs.mpd
 #EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="68288" tvg-logo="", 📺 🔴 00:45-02:55 WIB - Premier League: Chelsea-Manchester United [Viasat sport]
 https://a3569457567-s70378.cdn.ngenix.net/viasat_sport/2/index.m3u8
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="464224" tvg-logo="https://i.imgur.com/eWPoUxB.png", 📺 🔴 00:50-02:30 WIB - - Kolkata Knight Riders vs. Rajasthan Royals; TATA IPL [Star Sports 2 Tamil 576p]
-http://103.229.254.25:7001/play/a0dc/index.m3u8
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="464224" tvg-logo="https://i.imgur.com/eWPoUxB.png", 📺 🔴 00:50-02:30 WIB - - Kolkata Knight Riders vs. Rajasthan Royals; TATA IPL [Star Sports 2 Tamil HD 1080p]
-http://103.229.254.25:7001/play/a0d1/index.m3u8
 #EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="537766" tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/sdvs4u1659622094.png", 📺 🔴 00:55-02:50 WIB - Everton vs Liverpool (MW33) () – Premier League 2025/26 [HUB PREMIER 2]
 #http://dhoomtv.xyz:80/P4B9TB9xR8/humongous2tonight/148158
 http://lunar.pm:8080/Mrdon/4782314540/110289
@@ -110,22 +104,37 @@ https://otte.live.fly.ww.aiv-cdn.net/dub-nitro/live/dash/enc/tcninbbnt5/out/v1/7
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=d8235cccf08d0ff149a20dfcd11ff68b:e8ea3a1ae6892eb76a73dc1b14d216d6
 https://otte.live.fly.ww.aiv-cdn.net/dub-nitro/live/clients/dash/enc/ry1hll2vi2/out/v1/7597903045b6429d8c9ef041b2ad9d98/cenc.mpd
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 🇮🇩 ⏳ 02:25-04:30 WIB - ⋗ Schalke 04 / Munster (Football. Bundesliga 2. 30e journée)
-https://bwifi.my.id/5menit.mp4?m=schalke04munster_1776651900.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://shorter.me/YVfIC", 📺 ⏳ 02:25-04:25 WIB - Chance Liga
-https://bwifi.my.id/5menit.mp4?m=chanceliga_1776651900.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 02:30-04:15 WIB - ⋗ Tenis – ATP 500 Munich: Finale
-https://bwifi.my.id/5menit.mp4?m=tenisatp500munichfinale_1776652200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCJIC4-i8LmN0ENVDKdIXibfRJ5ptFGdKrTPbZGWhS1Gupaf7TaTdxz95BmzcW5R5oJlsGRYjAshgJKjrSl79-rdX7vliymWDogODWd4-mc9bBCEc_DdSyMswq-ZcoTL8tlFkfwBpkhy2wdUdHSndMhEkTKejhryjHFzvcIBvxS_nokJo51iENerS5GOtR/s700/PRIMA%20SPORT%201.png", 📺 ⏳ 02:30-04:30 WIB - Schalke – Munster – Meci Fotbal Bundesliga 2
-https://bwifi.my.id/5menit.mp4?m=schalkemunstermecifotbalbundesliga_1776652200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://iili.io/1mkKts.png", 📺 ⏳ 02:30-04:30 WIB - ATP500 – Přímý přenos 1. semifinále tenisového turnaje okruhu ATP Tour (Mnichov, Německo): ATP500: B
-https://bwifi.my.id/5menit.mp4?m=atp500pmpenos1semifinletenisovhoturnajeokruhuatptouratp500b_1776652200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://lo1.in/exyu/arensp1.png", 📺 ⏳ 02:30-04:30 WIB - Schalke – Munster. Sepakbola. Nemačka 2. Liga
-https://bwifi.my.id/5menit.mp4?m=schalkemunstersepakbolanemaka2liga_1776652200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://dtil.tmsimg.com/assets/s158255_ld_h15_aa.png?lock=720x540", 📺 ⏳ 02:40-03:30 WIB - 72nd Senior National Volleyball Championship 2026
-https://bwifi.my.id/5menit.mp4?m=72ndseniornationalvolleyballchampionship_1776652800.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.postimg.cc/wxtTsjKK/sst2.jpg", 📺 ⏳ 02:50-04:20 WIB - - Kolkata Knight Riders vs. Rajasthan Royals; TATA IPL
-https://bwifi.my.id/5menit.mp4?m=kolkataknightridersrajasthanroyalstataipl_1776653400.0
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="532976" tvg-logo="", 🇮🇩 🔴 02:25-04:30 WIB - ⋗ Schalke 04 / Munster (Football. Bundesliga 2. 30e journée) [BEIN SPORTS MAX 5 🇫🇷]
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key={"keys":[{"kty":"oct","kid":"sEeP0mQk6I+h5keO411/CA","k":"9QRCQtjSJMrkCH/Y72VAIw"},{"kty":"oct","kid":"InUSnyhWdxReNOuL4kmuSg","k":"dQVcYFHWUMUpYnseYm9TCg"},{"kty":"oct","kid":"LrcsuNUlcZzdo+H1zEOzQg","k":"4Hl+IoZXVIcgUgFd2ikF9w"},{"kty":"oct","kid":"CtLb067+IHA08kBQ68mM0Q","k":"CxIf52nQsbRaOmu4xA40BQ"}]}
+https://api-proxad.dc2.oqee.net/playlist/v1/live/973/1/live.mpd
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="438441" tvg-logo="https://shorter.me/YVfIC", 📺 🔴 02:25-04:25 WIB - Chance Liga [Sportdigital Fussball DE]
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=0ad4080cdff8c60b1233b22087f0b340:285f129c5eca01dd08a5d5a14ad801c8
+https://otte.live.fly.ww.aiv-cdn.net/fra-nitro/live/clients/dash/enc/ssdefyhkkr/out/v1/cf01290cb7f64525bdf861580a016ca8/cenc.mpd
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="497469" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 🔴 02:30-04:15 WIB - ⋗ Tenis – ATP 500 Munich: Finale [SPORT KLUB SL 2]
+https://raw.githubusercontent.com/B-inal-123/s-eropa/inal-22/SportKlubSL2.m3u8
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="6829" tvg-logo="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCJIC4-i8LmN0ENVDKdIXibfRJ5ptFGdKrTPbZGWhS1Gupaf7TaTdxz95BmzcW5R5oJlsGRYjAshgJKjrSl79-rdX7vliymWDogODWd4-mc9bBCEc_DdSyMswq-ZcoTL8tlFkfwBpkhy2wdUdHSndMhEkTKejhryjHFzvcIBvxS_nokJo51iENerS5GOtR/s700/PRIMA%20SPORT%201.png", 📺 🔴 02:30-04:30 WIB - Schalke – Munster – Meci Fotbal Bundesliga 2 [PRIMA SPORTS 1]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://rohan116.ultronx1.cfd/000/
+https://rohan116.ultronx1.cfd/puk1/usergenrx0cir27aq.m3u8
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="407498" tvg-logo="https://iili.io/1mkKts.png", 📺 🔴 02:30-04:30 WIB - ATP500 – Přímý přenos 1. semifinále tenisového turnaje okruhu ATP Tour (Mnichov, Německo): ATP500: B [PREMIER SPORTS]
+##KODIPROP:inputstream.adaptive.license_type=Clearkey
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+##KODIPROP:inputstream.adaptive.license_key=9bfeb5068725617dbad6338473da6d10:06577ffcc4935ba24aff4c4c9dd6846d
+##KODIPROP:inputstream.adaptive.license_key={ "keys":[ { "kty":"oct", "k":"Bld//MSTW6JK/0xMndaEbQ", "kid":"m/61BoclYX261jOEc9ptEA" } ], "type":"temporary" }
+##https://ast.livecricketsl.live/proxy/sg.php/https://linearjitp-playback.astro.com.my/dash-wv/linear/2601/default_ott.mpd
+http://mytv-extra.com:80/V713SWTY/D8T8KGTL/5107
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="381850" tvg-logo="", 📺 🔴 02:30-04:30 WIB - Schalke – Munster. Sepakbola. Nemačka 2. Liga [Arena Sport 1]
+https://estreams.tv.nej.cz/dash/CH_ARENASPORT1_Portable.ism/playlist.m3u8
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="381850" tvg-logo="https://lo1.in/exyu/arensp1.png", 📺 🔴 02:30-04:30 WIB - Schalke – Munster. Sepakbola. Nemačka 2. Liga [Arena Sport 1]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+https://estreams.tv.nej.cz/dash/CH_ARENASPORT1_Portable.ism/playlist.mpd
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="464182" tvg-logo="https://dtil.tmsimg.com/assets/s158255_ld_h15_aa.png?lock=720x540", 📺 🔴 02:40-03:30 WIB - 72nd Senior National Volleyball Championship 2026 [DD Sports SD 1080p]
+https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/b17adfe543354fdd8d189b110617cddd/index.m3u8
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 02:55-05:00 WIB - EHF Champions League Dames
 https://bwifi.my.id/5menit.mp4?m=ehfchampionsleaguedames_1776653700.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 02:55-05:10 WIB - ⋗ Premier League: Nottingham-Burnley
@@ -372,3 +381,5 @@ https://bwifi.my.id/5menit.mp4?m=superleaguehuddersfieldleeds_1776730920.0
 https://bwifi.my.id/5menit.mp4?m=vtsuperligafemininadevleiosascoxminasjogo_1776733200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.ibb.co/rcSRMh9/sky-sports-pl.png", 🇬🇧 ⏳ 02:00-03:00 WIB - Best Premier League Goals 03/04
 https://bwifi.my.id/5menit.mp4?m=bestpremierleaguegoals03_1776736800.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 02:06-03:48 WIB - Béziers / Provence Rugby
+https://bwifi.my.id/5menit.mp4?m=bziersprovencerugby_1776737160.0
