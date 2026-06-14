@@ -1,167 +1,64 @@
 #EXTM3U name="🔴 BAKUL WIFI SPORTS"
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="6263" tvg-logo="", 📺 🔴 13:05-20:00 WIB - Mistrovství ČR v padelu dvojic 2026 [Nova Sport 1]
-https://estreams.tv.nej.cz/dash/CH_NOVA_SPORT1_Portable.ism/playlist.mpd
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="408644" tvg-logo="https://i.imgur.com/qFNRJLb.png", 📺 🔴 16:30-19:30 WIB - Invicta FC: 49: Delboni vs. DeCoursey [fubo Sports Network 1080p]
-https://dnf08l6u6uxnz.cloudfront.net/master.m3u8
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="408644" tvg-logo="https://i.ibb.co.com/7Md2qy9/fubosp.png", 📺 🔴 16:30-19:30 WIB - Invicta FC: 49: Delboni vs. DeCoursey [FUBO SPORTS 1]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:90.0) Gecko/20100101 Firefox/90.0
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="534229" tvg-logo="https://www.kds.tw/wp-content/uploads/2025/09/6873536f40b50_nnOO-480x320.png", 📺 🔴 18:00-23:00 WIB - ⋗ BWF Australia Open: Finals [ASTRO BADMINTON]
+#EXTVLCOPT:http-user-agent=ExoPlayerDemo/2.15.1 (Linux; Android 12) ExoPlayerLib/2.15.1
+https://bintangstreaming.my.id/1kds/kds_tes.php/.m3u8?id=astro-badminton
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="534229" tvg-logo="https://www.kds.tw/wp-content/uploads/2025/09/6873537eda97e_44L1-480x320.webp", 📺 🔴 18:00-23:00 WIB - ⋗ BWF Australia Open: Finals [ASTRO BADMINTON 2]
+#EXTVLCOPT:http-user-agent=ExoPlayerDemo/2.15.1 (Linux; Android 12) ExoPlayerLib/2.15.1
+https://bintangstreaming.my.id/1kds/kds_tes.php/.m3u8?id=astro-badminton-2
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="6336" tvg-logo="", 📺 🔴 21:00-23:00 WIB - Sepakbola: Liga francuska. RC Lens – Lille OSC [ELEVEN SPORTS]
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=dc69b6159a0f9f0a4e03b3ff91cbacd5:d0dcbcd7723bc40df0bf34c9c092d51f
-https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/3b7qwiqzk3/out/v1/9f14895badca43e6a716db021dcd0c31/cenc.mpd
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="6832" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/1/18/Prima_Sport_2_new.svg/revision/latest/scale-to-width-down/150?cb=20230125050049", 📺 🔴 17:30-19:30 WIB - Otelul – Farul – MECI FOTBAL SUPERLIGA 1 [Prima Sport 2]
+#KODIPROP:inputstream.adaptive.license_key=69021095220f3c0eae9bc24215fd692b:eb58cfe0458ed0b48f7351fa3393ad59
+https://r.e.blueonline.tv/l/tvsmart/live/eds/Eleven_Sport_1/DHD/Manifest.mpd
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="381850" tvg-logo="", 📺 🔴 21:00-23:00 WIB - Manchester City – Chelsea. Sepakbola. Liga Inggris [Arena Sport 1]
+https://estreams.tv.nej.cz/dash/CH_ARENASPORT1_Portable.ism/playlist.m3u8
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="381850" tvg-logo="https://lo1.in/exyu/arensp1.png", 📺 🔴 21:00-23:00 WIB - Manchester City – Chelsea. Sepakbola. Liga Inggris [Arena Sport 1]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+https://estreams.tv.nej.cz/dash/CH_ARENASPORT1_Portable.ism/playlist.mpd
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="381848" tvg-logo="", 📺 🔴 21:00-23:00 WIB - Girona – Real Madrid. Sepakbola. Liga Spanyol [Arena Sport 2]
+https://estreams.tv.nej.cz/dash/CH_ARENASPORT2_Portable.ism/playlist.mpd
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="381848" tvg-logo="", 📺 🔴 21:00-23:00 WIB - Girona – Real Madrid. Sepakbola. Liga Spanyol [Arena Sport 2 HD]
+http://178.253.194.79:10007
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="381849" tvg-logo="", 📺 🔴 21:00-23:00 WIB - Darmstadt – Karlsruhe. Sepakbola. Nemačka 2. Liga [Arena Sport 3 HD]
+http://178.253.194.79:10008
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="381849" tvg-logo="", 📺 🔴 21:00-23:00 WIB - Darmstadt – Karlsruhe. Sepakbola. Nemačka 2. Liga [Arena Sport 3 Premium HD]
+http://178.253.194.79:10005
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="381854" tvg-logo="", 📺 🔴 21:00-23:00 WIB - Besiktas – Bahcesehir, polufinale G5. Basket. Turska Liga [Arena Sport 5 HD]
+http://178.253.194.79:10010
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="381851" tvg-logo="", 📺 🔴 21:00-23:00 WIB - Naisa – Crvena zvezda, finale G2. Bola Tangan. Superliga Srbije Ž [Arena Sport 6 HD]
+http://178.253.194.79:10011
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="410641" tvg-logo="", 📺 🔴 21:00-23:00 WIB - Sepakbola. BRAGA – BETIS. Europa Liga [Arena Sport 7 HD]
+http://178.253.194.79:10012
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="451368" tvg-logo="", 📺 🔴 21:00-23:00 WIB - Polufinale 2. Tenis. ATP 250 – Libema [Arena Tennis HD]
+http://178.253.194.79:10019
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="6832" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYeh83SinE7EU9kd4zaZ5e3GkKC2_VDlQPTA&s", 📺 🔴 21:30-22:15 WIB - Rezumate Superliga [Prima Sport 1]
+#EXTVLCOPT:http-referrer=https://rohan116.ultronx1.cfd/000/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36
+https://rohan116.ultronx1.cfd/puk1/usergenrx0cir27aq.m3u8
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="6832" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/1/18/Prima_Sport_2_new.svg/revision/latest/scale-to-width-down/150?cb=20230125050049", 📺 🔴 21:30-22:15 WIB - Rezumate Superliga [Prima Sport 2]
 #EXTVLCOPT:http-referrer=https://arwen1.panaka1.cfd/000/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36
 https://arwen1.panaka1.cfd/puk2/usergenrnd0clv03fyt.m3u8
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="6832" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/75/Prima_Sport_3_new.svg/revision/latest/scale-to-width-down/150?cb=20230126050332", 📺 🔴 17:30-19:30 WIB - Otelul – Farul – MECI FOTBAL SUPERLIGA 1 [Prima Sport 3]
-#EXTVLCOPT:http-referrer=https://iron1.jarvisx1.cfd/000/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36
-https://iron1.jarvisx1.cfd/puk3/usergenrx4t0l8sybkr.m3u8
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="524124" tvg-logo="", 📺 🔴 17:30-19:30 WIB - Proliga [SPORT5 STARZ 🇮🇱]
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=07e188f7cdfe89f1b157766bc4db084e:7f531e4eed5d07f5ae187c8807b40480
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
-https://d1zqtf09wb8nt5.cloudfront.net/livedash/oil/freetv/live/sport_5_starz/live.livx?indexMode&dvr=7200000
-#EXTINF:0 group-title="🔴 SEDANG TAYANG" tvg-id="524160" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/a/a4/Sportstars_4.png", 📺 🔴 18:00-20:00 WIB - V-League Women [Sportstar 4]
-#EXTVLCOPT:http-referrer=https://www.visionplus.id/
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=b576e5f5f1bc4cbaa866e5b0face5a30:3377be6c3b5f688ebed687312c9b9d95
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36
-https://d2xz2v5wuvgur6.cloudfront.net/out/v1/2fcc58ccec8c45e9aa094fb980eb642d/index.mpd
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="524160" tvg-logo="https://warningfm.github.io/v3/img/LSct2v4.png?v=1.1.1.1", 📺 🔴 18:00-20:00 WIB - V-League Women [Sportstars 4 HD]
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=b576e5f5f1bc4cbaa866e5b0face5a30:3377be6c3b5f688ebed687312c9b9d95
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
-#https://d2xz2v5wuvgur6.cloudfront.net/out/v1/2fcc58ccec8c45e9aa094fb980eb642d/index.mpd|referrer=https://visionplus.id
-http://cdn.nng.cloudns.us/live/m3u8/sprt/3b5901d4c8158d3.m3u8
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="534229" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvYbetDZxQrRJA94SA2Xg_Q6VfioQsahgEZw&s", 📺 🔴 18:00-23:00 WIB - ⋗ BWF Australia Open: Finals [BWF COURT 1]
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=https://vidx.semar.my.id/pidick.php?id=18249&type=drm
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleCoreMedia/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36
-https://vidx.semar.my.id/cobaduarr.mpd?id=18249&type=dash
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="534229" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvYbetDZxQrRJA94SA2Xg_Q6VfioQsahgEZw&s", 📺 🔴 18:00-23:00 WIB - ⋗ BWF Australia Open: Finals [BWF COURT 2]
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=https://vidx.semar.my.id/pidick.php?id=18250&type=drm
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleCoreMedia/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36
-https://vidx.semar.my.id/cobaduarr.mpd?id=18250&type=dash
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="537766" tvg-logo="https://poster.starhubgo.com/Linear_channels2/222_1920x1080_HTV.png?w=272", 📺 🔴 18:00-20:00 WIB - Manchester City vs Brentford (MW36) – Premier League 2025/26 [Hub Premier2 HD]
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="537766" tvg-logo="https://poster.starhubgo.com/Linear_channels2/222_1920x1080_HTV.png?w=272", 📺 🔴 22:00-00:00 WIB - Arsenal vs Burnley (MW37) – Premier League 2025/26 [Hub Premier2 HD]
 http://main.light-ott.net:80/play/live.php?mac=00:1A:79:3A:93:FD&stream=1314078&extension=ts&play_token=1dWiSXJFZ1
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="532221" tvg-logo="", 📺 🔴 18:00-20:00 WIB - LALIGA EA SPORTS 2025/26 MD29 [Now Sports 2 HD]
-#
-https://virtual.anbox.dpdns.org/resolve?session=56525825-2df9-4d08-a94b-22f1f84d32df&channel=NOW%E4%BD%93%E8%82%B23&src=aHR0cDovL21haW4ubGlnaHQtb3R0Lm5ldDo4MC9wbGF5L2xpdmUucGhwP21hYz0wMDoxQTo3OTozQTo5MzpGRCZzdHJlYW09MzgyODQxJmV4dGVuc2lvbj10cyZwbGF5X3Rva2VuPTV1aUtDR1ROQ0Y=
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="427680" tvg-logo="https://i.postimg.cc/7LqrzCry/1775875546913.png", 🇬🇧 🔴 18:00-20:00 WIB - RC Celta de Vigo vs. Sevilla [Sky Sport La liga FHD]
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="427680" tvg-logo="https://i.postimg.cc/7LqrzCry/1775875546913.png", 🇬🇧 🔴 22:00-00:00 WIB - RC Celta de Vigo vs. Levante [Sky Sport La liga FHD]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=cb80e1e7d7598eaf98b1dbbe6dc14ee9:103ae55c7948ca1d159d6743619d26c4
 https://aca-live4-ott.izzigo.tv/12/out/u/dash/SKY-SPORTS-16-HD/default.mpd
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="427680" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKBCa6SydXxbOh3qbRLTAWW6FOnRo5nXa9kw&s", 🇬🇧 🔴 18:00-20:00 WIB - RC Celta de Vigo vs. Sevilla [SKY SPORTS LALIGA]
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="427680" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKBCa6SydXxbOh3qbRLTAWW6FOnRo5nXa9kw&s", 🇬🇧 🔴 22:00-00:00 WIB - RC Celta de Vigo vs. Levante [SKY SPORTS LALIGA]
 #EXTVLCOPT:http-user-agent=ExoPlayer/2.19.1 (Linux; Android 15) Media3/1.6.0
 https://stream.ads.ottera.tv/playlist.m3u8?network_id=535
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="410641" tvg-logo="", 📺 🔴 18:00-20:00 WIB - Sepakbola. FIORENTINA – CYRSTAL PALACE. Konferencijska Liga [Arena Sport 7 HD]
-http://178.253.194.79:10012
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFMlrWuDQLR7A3zpP1C05a9GpwwXBzly6sCw&s", 📺 🔴 18:00-20:00 WIB - Final: Chinese Taipei vs Korea
-https://tdlive.yarncdn.live/live/tdtv_blv_taotinhtao/playlist.m3u8
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="406566" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZC-ziqZMsoRYfc6wGnXmOAUd0TZ2cGABVvxVJA2ZUZIG2BeY-bN5TMCoI&s=10", 📺 🔴 18:19-20:00 WIB - LALIGA EA SPORTS (T25/26): Villarreal – Osasuna [LALIGA]
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=620e51b82596475517a27aa425c52280:2b9ba811e9c5aeafc8ae1b71cdca4d6a
-https://a166aivottlinear-a.akamaihd.net/OTTB/dub-nitro/live/clients/dash/enc/k0duzgfejg/out/v1/70a50b1bda944628b8e7e66ab4069419/cenc.mpd
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="406566" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZC-ziqZMsoRYfc6wGnXmOAUd0TZ2cGABVvxVJA2ZUZIG2BeY-bN5TMCoI&s=10", 📺 🔴 18:19-20:00 WIB - LALIGA EA SPORTS (T25/26): Villarreal – Osasuna [LALIGA]
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=620e51b82596475517a27aa425c52280:2b9ba811e9c5aeafc8ae1b71cdca4d6a
-https://otte.live.fly.ww.aiv-cdn.net/dub-nitro/live/clients/dash/enc/k0duzgfejg/out/v1/70a50b1bda944628b8e7e66ab4069419/cenc.mpd
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="497508" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 🔴 19:00-20:45 WIB - Tenis – ženski ITF turnir: WTA Zagreb, 1/2 finale (1×) [SPORT KLUB SL 3]
-https://raw.githubusercontent.com/B-inal-123/s-eropa/inal-22/SportKlubSL3.m3u8
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="381850" tvg-logo="", 📺 🔴 19:00-21:00 WIB - Aston Villa – Nottingham Forest. Sepakbola. Liga Inggris [Arena Sport 1]
-https://estreams.tv.nej.cz/dash/CH_ARENASPORT1_Portable.ism/playlist.m3u8
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="381850" tvg-logo="https://lo1.in/exyu/arensp1.png", 📺 🔴 19:00-21:00 WIB - Aston Villa – Nottingham Forest. Sepakbola. Liga Inggris [Arena Sport 1]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-https://estreams.tv.nej.cz/dash/CH_ARENASPORT1_Portable.ism/playlist.mpd
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="381848" tvg-logo="", 📺 🔴 19:00-21:00 WIB - Udinese – Genoa. Sepakbola. Liga Italia [Arena Sport 2]
-https://estreams.tv.nej.cz/dash/CH_ARENASPORT2_Portable.ism/playlist.mpd
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="381848" tvg-logo="", 📺 🔴 19:00-21:00 WIB - Udinese – Genoa. Sepakbola. Liga Italia [Arena Sport 2 HD]
-http://178.253.194.79:10007
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="381854" tvg-logo="", 📺 🔴 19:00-21:00 WIB - Bayern – Alba, finale G1. Basket. Liga Jerman [Arena Sport 5 HD]
-http://178.253.194.79:10010
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="451368" tvg-logo="", 📺 🔴 19:00-21:00 WIB - Polufinale 1. Tenis. ATP 250 – Libema [Arena Tennis HD]
-http://178.253.194.79:10019
-#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQO9dsOgy9cDyf6U3Tu2n2KsKJhUhV7WhxQ&s", 📺 🔴 19:00-21:00 WIB - Slovenia v Japan | Week 1 | Men's VNL 2026
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="496765" tvg-logo="", 📺 🔴 22:00-01:00 WIB - College Baseball 2026 Men's College World Series, Game 3: Oklahoma vs. Alabama [FOXSPORTS2]
+http://179.60.51.134:8888/FOXSPORTS2/index.m3u8
+#EXTINF:-1 group-title="🔴 SEDANG TAYANG" tvg-id="" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQO9dsOgy9cDyf6U3Tu2n2KsKJhUhV7WhxQ&s", 📺 🔴 22:00-00:00 WIB - Germany v France | Week 1 | Men's VNL 2026
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://xl365.buzzscorelinez.com/
-https://live1.pro2cdnlive.com/live/channel81.flv?wsSecret=3f51f0bd3278964229c3ea43f3ac3386&wsABSTime=1781456613
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 19:30-21:30 WIB - Basket – Grška A1 liga: Finale (5. tekma): Olympiacos – Panathinaikos
-https://bwifi.my.id/5menit.mp4?m=basketgrkaa1ligafinaleolympiacospanathinaikos_1781465400.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 19:30-21:00 WIB - Crvena zvezda – Naisa, finale G1. Bola Tangan. Superliga Srbije Ž
-https://bwifi.my.id/5menit.mp4?m=crvenazvezdanaisafinaleg1bolatangansuperligasrbije_1781465400.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.imgur.com/V562tpO.png", 🇬🇧 ⏳ 20:00-22:00 WIB - Premier Padel
-https://bwifi.my.id/5menit.mp4?m=premierpadel_1781467200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://warningfm.github.io/v3/img/LSct2v4.png?v=1.1.1.1", 📺 ⏳ 20:00-22:00 WIB - Bundesliga
-https://bwifi.my.id/5menit.mp4?m=bundesliga_1781467200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://poster.starhubgo.com/Linear_channels2/203_1920x1080_HTV.png?w=272", 📺 ⏳ 20:00-22:00 WIB - LPGA Tour 2026 – Dow Championship Round 3
-https://bwifi.my.id/5menit.mp4?m=lpgatour2026dowchampionshipround_1781467200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://poster.starhubgo.com/Linear_channels2/222_1920x1080_HTV.png?w=272", 📺 ⏳ 20:00-22:00 WIB - West Ham United vs Arsenal (MW36) – Premier League 2025/26
-https://bwifi.my.id/5menit.mp4?m=westhamunitedarsenalpremierleague2025_1781467200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 20:00-22:00 WIB - LALIGA EA SPORTS 2025/26 MD29
-https://bwifi.my.id/5menit.mp4?m=laligaeasports202526md_1781467200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKBCa6SydXxbOh3qbRLTAWW6FOnRo5nXa9kw&s", 🇬🇧 ⏳ 20:00-22:00 WIB - Elche vs. Getafe
-https://bwifi.my.id/5menit.mp4?m=elchegetafe_1781467200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 20:00-21:00 WIB - Sepakbola. SAŽETAK. Liga Champions
-https://bwifi.my.id/5menit.mp4?m=sepakbolasaetakligachampions_1781467200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.ibb.co.com/fvP8vKX/fxsp2mx.png", 📺 ⏳ 20:01-23:00 WIB - AFL Premiership Football
-https://bwifi.my.id/5menit.mp4?m=aflpremiershipfootball_1781467260.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 20:05-22:00 WIB - Bath Rugby – Exeter Chiefs
-https://bwifi.my.id/5menit.mp4?m=bathrugbyexeterchiefs_1781467500.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYeh83SinE7EU9kd4zaZ5e3GkKC2_VDlQPTA&s", 📺 ⏳ 20:15-21:00 WIB - Rezumate Superliga
-https://bwifi.my.id/5menit.mp4?m=rezumatesuperliga_1781468100.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 20:50-21:45 WIB - Serie A Hoogtepunten. Seizoensoverzicht 2025-2026
-https://bwifi.my.id/5menit.mp4?m=serieahoogtepuntenseizoensoverzicht2025_1781470200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 21:00-23:00 WIB - Darmstadt – Karlsruhe. Sepakbola. Nemačka 2. Liga
-https://bwifi.my.id/5menit.mp4?m=darmstadtkarlsruhesepakbolanemaka2liga_1781470800.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://raw.githubusercontent.com/lamtung16/iptv/refs/heads/main/logos/sky-sports-main-event.png", 🇬🇧 ⏳ 21:00-22:00 WIB - ⋗ World Cup Breakfast
-https://bwifi.my.id/5menit.mp4?m=worldcupbreakfast_1781470800.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 21:00-23:00 WIB - Sepakbola: Liga francuska. RC Lens – Lille OSC
-https://bwifi.my.id/5menit.mp4?m=sepakbolaligafrancuskarclenslilleosc_1781470800.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 21:00-23:00 WIB - Manchester City – Chelsea. Sepakbola. Liga Inggris
-https://bwifi.my.id/5menit.mp4?m=manchestercitychelseasepakbolaligainggris_1781470800.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 21:00-23:00 WIB - Girona – Real Madrid. Sepakbola. Liga Spanyol
-https://bwifi.my.id/5menit.mp4?m=gironarealmadridsepakbolaligaspanyol_1781470800.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 21:00-23:00 WIB - Besiktas – Bahcesehir, polufinale G5. Basket. Turska Liga
-https://bwifi.my.id/5menit.mp4?m=besiktasbahcesehirpolufinaleg5basketturskaliga_1781470800.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 21:00-23:00 WIB - Naisa – Crvena zvezda, finale G2. Bola Tangan. Superliga Srbije Ž
-https://bwifi.my.id/5menit.mp4?m=naisacrvenazvezdafinaleg2bolatangansuperligasrbije_1781470800.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 21:00-23:00 WIB - Sepakbola. BRAGA – BETIS. Europa Liga
-https://bwifi.my.id/5menit.mp4?m=sepakbolabragabetiseuropaliga_1781470800.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 21:00-23:00 WIB - Polufinale 2. Tenis. ATP 250 – Libema
-https://bwifi.my.id/5menit.mp4?m=polufinale2tenisatp250libema_1781470800.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 21:15-23:00 WIB - Voli (M): Liga narodov: Brazilija – Srbija
-https://bwifi.my.id/5menit.mp4?m=voliliganarodovbrazilijasrbija_1781471700.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYeh83SinE7EU9kd4zaZ5e3GkKC2_VDlQPTA&s", 📺 ⏳ 21:30-22:15 WIB - Rezumate Superliga
-https://bwifi.my.id/5menit.mp4?m=rezumatesuperliga_1781472600.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://raw.githubusercontent.com/lamtung16/iptv/refs/heads/main/logos/sky-sports-main-event.png", 🇬🇧 ⏳ 22:00-23:00 WIB - ⋗ World Cup Breakfast
-https://bwifi.my.id/5menit.mp4?m=worldcupbreakfast_1781474400.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://poster.starhubgo.com/Linear_channels2/222_1920x1080_HTV.png?w=272", 📺 ⏳ 22:00-00:00 WIB - Arsenal vs Burnley (MW37) – Premier League 2025/26
-https://bwifi.my.id/5menit.mp4?m=arsenalburnleypremierleague2025_1781474400.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKBCa6SydXxbOh3qbRLTAWW6FOnRo5nXa9kw&s", 🇬🇧 ⏳ 22:00-00:00 WIB - RC Celta de Vigo vs. Levante
-https://bwifi.my.id/5menit.mp4?m=rcceltadevigolevante_1781474400.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 22:00-01:00 WIB - College Baseball 2026 Men's College World Series, Game 3: Oklahoma vs. Alabama
-https://bwifi.my.id/5menit.mp4?m=collegebaseball2026menscollegeworldseriesgame3oklahomaalabama_1781474400.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQO9dsOgy9cDyf6U3Tu2n2KsKJhUhV7WhxQ&s", 📺 ⏳ 22:00-00:00 WIB - Germany v France | Week 1 | Men's VNL 2026
-https://bwifi.my.id/5menit.mp4?m=germanyfranceweek1mensvnl_1781474400.0
+https://live1.pro2cdnlive.com/live/channel84.m3u8?wsSecret=e3d4e27ef733aa37faac4e36395b0288&wsABSTime=1781456677
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.ibb.co.com/7Md2qy9/fubosp.png", 📺 ⏳ 22:30-01:00 WIB - Invicta FC: 51: Tennant vs. Bernardo
 https://bwifi.my.id/5menit.mp4?m=invictafc51tennantbernardo_1781476200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.kds.tw/wp-content/uploads/2025/09/6873537eda97e_44L1-480x320.webp", 📺 ⏳ 23:00-00:00 WIB - BWF Indonesia Open: Finals
-https://bwifi.my.id/5menit.mp4?m=bwfindonesiaopenfinals_1781478000.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 23:00-00:45 WIB - Voli (M): Liga narodov: Kanada – ZDA
-https://bwifi.my.id/5menit.mp4?m=voliliganarodovkanadazda_1781478000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 23:00-00:00 WIB - IMSA WeatherTech SportsCar Championship Hoogtepunten. Monterey SportsCar Championship
 https://bwifi.my.id/5menit.mp4?m=imsaweathertechsportscarchampionshiphoogtepuntenmontereysportscarchampionship_1781478000.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 23:00-01:00 WIB - AZ Alkmaar – Feyenoord. Sepakbola. Holandska Liga
-https://bwifi.my.id/5menit.mp4?m=azalkmaarfeyenoordsepakbolaholandskaliga_1781478000.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://raw.githubusercontent.com/lamtung16/iptv/refs/heads/main/logos/sky-sports-main-event.png", 🇬🇧 ⏳ 23:00-00:00 WIB - ⋗ World Cup Breakfast
-https://bwifi.my.id/5menit.mp4?m=worldcupbreakfast_1781478000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 23:00-01:00 WIB - Sepakbola: Liga portugalska. FC Porto – CD Nacional
 https://bwifi.my.id/5menit.mp4?m=sepakbolaligaportugalskafcportocdnacional_1781478000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 23:00-01:00 WIB - Girls Final. Tenis. ITF – Kuršumlijska banja
@@ -170,38 +67,34 @@ https://bwifi.my.id/5menit.mp4?m=girlsfinaltenisitfkurumlijskabanja_1781478000.0
 https://bwifi.my.id/5menit.mp4?m=intercomosepakbolaligaitalia_1781478000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://poster.starhubgo.com/Linear_channels2/204_1920x1080_HTV.png?w=272", 📺 ⏳ 23:00-03:00 WIB - ICC Women's T20 World Cup 2026 () – M06: India vs Pakistan
 https://bwifi.my.id/5menit.mp4?m=iccwomenst20worldcup2026m06indiapakistan_1781478000.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.kds.tw/wp-content/uploads/2025/09/6873537eda97e_44L1-480x320.webp", 📺 ⏳ 23:00-00:00 WIB - BWF Indonesia Open: Finals
+https://bwifi.my.id/5menit.mp4?m=bwfindonesiaopenfinals_1781478000.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 23:00-01:00 WIB - AZ Alkmaar – Feyenoord. Sepakbola. Holandska Liga
+https://bwifi.my.id/5menit.mp4?m=azalkmaarfeyenoordsepakbolaholandskaliga_1781478000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 23:00-01:00 WIB - Oslo. Atletika. DIJAMANTSKA LIGA
 https://bwifi.my.id/5menit.mp4?m=osloatletikadijamantskaliga_1781478000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 23:00-01:00 WIB - Polufinale 1. Tenis. ATP 250 – Stuttgart
 https://bwifi.my.id/5menit.mp4?m=polufinale1tenisatp250stuttgart_1781478000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 23:30-01:30 WIB - Kina – Kuba. Voli. Liga Nacija
 https://bwifi.my.id/5menit.mp4?m=kinakubavoliliganacija_1781479800.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.unblockitall.com/wp-content/uploads/2018/07/digi-sport.jpg", 📺 ⏳ 23:45-00:40 WIB - ⋗ Asii Tenisului
-https://bwifi.my.id/5menit.mp4?m=asiitenisului_1781480700.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 23:45-00:35 WIB - Het finale duel: Ronaldo vs Messi
 https://bwifi.my.id/5menit.mp4?m=hetfinaleduelronaldomessi_1781480700.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.kds.tw/wp-content/uploads/2025/09/6873537eda97e_44L1-480x320.webp", 📺 ⏳ 00:00-01:00 WIB - BWF Orleans Masters: HL
-https://bwifi.my.id/5menit.mp4?m=bwforleansmastershl_1781481600.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://raw.githubusercontent.com/lamtung16/iptv/refs/heads/main/logos/sky-sports-main-event.png", 🇬🇧 ⏳ 00:00-02:30 WIB - ⋗ ICC Women's T20 World Cup. Bangladesh v Netherlands
-https://bwifi.my.id/5menit.mp4?m=iccwomenst20worldcupbangladeshnetherlands_1781481600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://poster.starhubgo.com/Linear_channels2/222_1920x1080_HTV.png?w=272", 📺 ⏳ 00:00-02:00 WIB - Bournemouth vs Manchester City (MW37) – Premier League 2025/26
 https://bwifi.my.id/5menit.mp4?m=bournemouthmanchestercitypremierleague2025_1781481600.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.kds.tw/wp-content/uploads/2025/09/6873537eda97e_44L1-480x320.webp", 📺 ⏳ 00:00-01:00 WIB - BWF Orleans Masters: HL
+https://bwifi.my.id/5menit.mp4?m=bwforleansmastershl_1781481600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 00:00-02:00 WIB - Tenerife – Barcelona, polufinale G3. Basket. Liga Spanyol
 https://bwifi.my.id/5menit.mp4?m=tenerifebarcelonapolufinaleg3basketligaspanyol_1781481600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 00:00-01:00 WIB - Sepakbola. SAŽETAK. Europa Liga
 https://bwifi.my.id/5menit.mp4?m=sepakbolasaetakeuropaliga_1781481600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQjIV5SKCpFyJPoqsF3fJSchtJbxyJ6Pgl4qkNpaL_wA&s=10", 📺 ⏳ 00:00-02:00 WIB - Jerman vs Curaçao
 https://bwifi.my.id/5menit.mp4?m=jermancuraao_1781481600.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQO9dsOgy9cDyf6U3Tu2n2KsKJhUhV7WhxQ&s", 📺 ⏳ 00:30-02:30 WIB - Bulgaria v Serbia | Week 1 | Men's VNL 2026
+https://bwifi.my.id/5menit.mp4?m=bulgariaserbiaweek1mensvnl_1781483400.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.ibb.co.com/fpHYC7N/TNT2.png", 📺 ⏳ 00:45-01:30 WIB - Women's Circuit Racing World Championship
 https://bwifi.my.id/5menit.mp4?m=womenscircuitracingworldchampionship_1781484300.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.unblockitall.com/wp-content/uploads/2018/07/digi-sport.jpg", 📺 ⏳ 01:00-03:00 WIB - ⋗ Tenis: WTA Hertogenbosch Finala
-https://bwifi.my.id/5menit.mp4?m=teniswtahertogenboschfinala_1781485200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 01:00-03:00 WIB - ⋗ Tenis: WTA 250 Hertogenbosch: Finale
-https://bwifi.my.id/5menit.mp4?m=teniswta250hertogenboschfinale_1781485200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 01:00-06:00 WIB - ⋗ Tennis: Libéma Open 2026. Finales, Mannen & Vrouwen
 https://bwifi.my.id/5menit.mp4?m=tennislibmaopen2026finalesmannenvrouwen_1781485200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 01:00-02:00 WIB - Pregled 10. kola. Sepakbola. Holandska Liga
-https://bwifi.my.id/5menit.mp4?m=pregled10kolasepakbolaholandskaliga_1781485200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 01:00-03:00 WIB - Sepakbola: LaLiga. CD Alaves – Real Madryt CF
 https://bwifi.my.id/5menit.mp4?m=sepakbolalaligacdalavesrealmadrytcf_1781485200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 01:00-03:00 WIB - Boys Final. Tenis. ITF – Kuršumlijska banja
@@ -212,6 +105,8 @@ https://bwifi.my.id/5menit.mp4?m=realsociedadvillarrealsepakbolaligaspanyol_1781
 https://bwifi.my.id/5menit.mp4?m=wandadiamondleague2026rab_1781485200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 01:00-04:00 WIB - College Baseball 2026 Men's College World Series, Game 4: Texas vs. Georgia
 https://bwifi.my.id/5menit.mp4?m=collegebaseball2026menscollegeworldseriesgame4texasgeorgia_1781485200.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 01:00-02:00 WIB - Pregled 10. kola. Sepakbola. Holandska Liga
+https://bwifi.my.id/5menit.mp4?m=pregled10kolasepakbolaholandskaliga_1781485200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 01:00-03:00 WIB - Turska – Italija. Voli. Liga Nacija
 https://bwifi.my.id/5menit.mp4?m=turskaitalijavoliliganacija_1781485200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 01:00-03:00 WIB - Sepakbola. DINAMO – GENK. Europa Liga
@@ -222,20 +117,20 @@ https://bwifi.my.id/5menit.mp4?m=basketfinaleligachampions_1781485200.0
 https://bwifi.my.id/5menit.mp4?m=polufinale2tenisatp250stuttgart_1781485200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/sky-sport-1-nz.png", 🇬🇧 ⏳ 01:30-02:55 WIB - ⋗ FIA Formula 1: Barcelona Pre Race
 https://bwifi.my.id/5menit.mp4?m=fiaformula1barcelonaprerace_1781487000.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQO9dsOgy9cDyf6U3Tu2n2KsKJhUhV7WhxQ&s", 📺 ⏳ 01:30-03:30 WIB - Canada v Türkiye | Week 1 | Men's VNL 2026
+https://bwifi.my.id/5menit.mp4?m=canadatrkiyeweek1mensvnl_1781487000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZC-ziqZMsoRYfc6wGnXmOAUd0TZ2cGABVvxVJA2ZUZIG2BeY-bN5TMCoI&s=10", 📺 ⏳ 01:55-03:50 WIB - LALIGA EA SPORTS (T25/26): Celta – Betis
 https://bwifi.my.id/5menit.mp4?m=laligaeasportsceltabetis_1781488500.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 02:00-04:00 WIB - Eintracht Frankfurt – Union Berlin. Sepakbola. Liga Jerman
-https://bwifi.my.id/5menit.mp4?m=eintrachtfrankfurtunionberlinsepakbolaligajerman_1781488800.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 02:00-03:00 WIB - FIFA World Cup 2026 World Cup Happy Hour
 https://bwifi.my.id/5menit.mp4?m=fifaworldcup2026worldcuphappyhour_1781488800.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKBCa6SydXxbOh3qbRLTAWW6FOnRo5nXa9kw&s", 🇬🇧 ⏳ 02:00-04:00 WIB - Real Oviedo vs. Getafe
 https://bwifi.my.id/5menit.mp4?m=realoviedogetafe_1781488800.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 02:00-04:00 WIB - Eintracht Frankfurt – Union Berlin. Sepakbola. Liga Jerman
+https://bwifi.my.id/5menit.mp4?m=eintrachtfrankfurtunionberlinsepakbolaligajerman_1781488800.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 02:00-04:30 WIB - Beč, četvrtfinala. Basket 3x3. FIBA 3x3 World Tour
 https://bwifi.my.id/5menit.mp4?m=beetvrtfinalabasket3x3fiba3x3worldtour_1781488800.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.postimg.cc/9FXvjY3M/mnc-id-tv.png", 📺 ⏳ 02:30-05:00 WIB - Pro Futsal League
 https://bwifi.my.id/5menit.mp4?m=profutsalleague_1781490600.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://raw.githubusercontent.com/lamtung16/iptv/refs/heads/main/logos/sky-sports-main-event.png", 🇬🇧 ⏳ 02:30-03:55 WIB - ⋗ Formula 1. Barcelona-Catalunya Grand Prix: Grand Prix Sunday
-https://bwifi.my.id/5menit.mp4?m=formula1barcelonacatalunyagrandprixgrandprixsunday_1781490600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/sky-sport-1-nz.png", 🇬🇧 ⏳ 02:55-05:00 WIB - ⋗ FIA Formula 1: Barcelona Grand Prix
 https://bwifi.my.id/5menit.mp4?m=fiaformula1barcelonagrandprix_1781492100.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 03:00-05:30 WIB - ⋗ Tennis: BOSS Open 2026. Finale, Mannen
@@ -248,28 +143,20 @@ https://bwifi.my.id/5menit.mp4?m=projektwarszawaziraatmeza3mestovoliligaampiona_
 https://bwifi.my.id/5menit.mp4?m=baseballminnesottastlouismlb_1781492400.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 03:00-05:00 WIB - Finale. Tenis. ATP 250 – Stuttgart
 https://bwifi.my.id/5menit.mp4?m=finaletenisatp250stuttgart_1781492400.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.unblockitall.com/wp-content/uploads/2018/07/digi-sport.jpg", 📺 ⏳ 03:30-05:30 WIB - ⋗ Tenis: WTA Londra Finala
-https://bwifi.my.id/5menit.mp4?m=teniswtalondrafinala_1781494200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 03:30-05:30 WIB - ⋗ Tenis: ATP 250 Hertogenbosch: Finale
-https://bwifi.my.id/5menit.mp4?m=tenisatp250hertogenboschfinale_1781494200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 03:30-05:15 WIB - ⋗ Tenis: WTA 500 – London: Finale
-https://bwifi.my.id/5menit.mp4?m=teniswta500londonfinale_1781494200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.ibb.co.com/2tBx8pR/TNT1.png", 📺 ⏳ 03:30-06:15 WIB - Premiership Women's Rugby
 https://bwifi.my.id/5menit.mp4?m=premiershipwomensrugby_1781494200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 03:30-05:30 WIB - Finale. Tenis. ATP 250 – Libema
 https://bwifi.my.id/5menit.mp4?m=finaletenisatp250libema_1781494200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.ibb.co.com/fxPGRt7/vsport2.png", 📺 ⏳ 03:50-06:00 WIB - ⋗ EHF Champions League, kvinner
-https://bwifi.my.id/5menit.mp4?m=ehfchampionsleaguekvinner_1781495400.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 03:55-06:00 WIB - ⋗ EHF Champions League Heren. Final4, Troostfinale: TBA – TBA
 https://bwifi.my.id/5menit.mp4?m=ehfchampionsleagueherenfinal4troostfinaletbatba_1781495700.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://raw.githubusercontent.com/lamtung16/iptv/refs/heads/main/logos/sky-sports-main-event.png", 🇬🇧 ⏳ 03:55-06:00 WIB - ⋗ Formula 1. Barcelona-Catalunya Grand Prix: Race
-https://bwifi.my.id/5menit.mp4?m=formula1barcelonacatalunyagrandprixrace_1781495700.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 🇮🇩 ⏳ 04:00-06:30 WIB - ⋗ Tennis: ATP Challenger Lyon (Finale)
 https://bwifi.my.id/5menit.mp4?m=tennisatpchallengerlyon_1781496000.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYeh83SinE7EU9kd4zaZ5e3GkKC2_VDlQPTA&s", 📺 ⏳ 04:00-05:30 WIB - ⋗ HANDBAL EHF: CHAMPIONS LEAGUE – Finala mică
-https://bwifi.my.id/5menit.mp4?m=handbalehfchampionsleaguefinalamic_1781496000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 04:00-06:00 WIB - Sepakbola. CRYSTAL PALACE – SHAKHTAR. Konferencijska Liga
 https://bwifi.my.id/5menit.mp4?m=sepakbolacrystalpalaceshakhtarkonferencijskaliga_1781496000.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUtY8Rc2n6SO5ac7An15amazpi-zbuVUz31g&s", 📺 ⏳ 04:00-05:30 WIB - ⋗ HANDBAL EHF: CHAMPIONS LEAGUE – Finala mică
+https://bwifi.my.id/5menit.mp4?m=handbalehfchampionsleaguefinalamic_1781496000.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQO9dsOgy9cDyf6U3Tu2n2KsKJhUhV7WhxQ&s", 📺 ⏳ 04:00-06:00 WIB - Brazil v Argentina | Week 1 | Men's VNL 2026
+https://bwifi.my.id/5menit.mp4?m=brazilargentinaweek1mensvnl_1781496000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKBCa6SydXxbOh3qbRLTAWW6FOnRo5nXa9kw&s", 🇬🇧 ⏳ 04:15-06:15 WIB - Real Sociedad vs. Valencia
 https://bwifi.my.id/5menit.mp4?m=realsociedadvalencia_1781496900.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 04:30-06:30 WIB - Bayern – Alba, finale G2. Basket. Liga Jerman
@@ -278,8 +165,6 @@ https://bwifi.my.id/5menit.mp4?m=bayernalbafinaleg2basketligajerman_1781497800.0
 https://bwifi.my.id/5menit.mp4?m=cevvolleyballeuropeanleaguemannennederlandslowakije_1781498700.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://mimipipi22.github.io/logo/antik/jojsport2.jpg", 📺 ⏳ 04:50-07:15 WIB - Volejbal – Európska liga ženy
 https://bwifi.my.id/5menit.mp4?m=volejbaleurpskaligaeny_1781499000.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 05:00-06:00 WIB - The Association -NBA Finals Game 5 Postgame
-https://bwifi.my.id/5menit.mp4?m=theassociationnbafinalsgame5postgame_1781499600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/sky-sport-1-nz.png", 🇬🇧 ⏳ 05:00-06:00 WIB - ⋗ FIA Formula 1: Chequered Flag
 https://bwifi.my.id/5menit.mp4?m=fiaformula1chequeredflag_1781499600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 05:00-07:00 WIB - Sepakbola: Liga francuska. FC Nantes – Lille OSC
@@ -292,6 +177,8 @@ https://bwifi.my.id/5menit.mp4?m=almeracdcastelln_1781499600.0
 https://bwifi.my.id/5menit.mp4?m=amerikisepakbolapittsburghhoustonnfl_1781499600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 🇬🇧 ⏳ 05:00-07:00 WIB - Premier League Years 2024-2025
 https://bwifi.my.id/5menit.mp4?m=premierleagueyears2024_1781499600.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQO9dsOgy9cDyf6U3Tu2n2KsKJhUhV7WhxQ&s", 🇺🇸 ⏳ 05:00-07:00 WIB - USA v Italy | Week 1 | Men's VNL 2026
+https://bwifi.my.id/5menit.mp4?m=usaitalyweek1mensvnl_1781499600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 05:30-08:00 WIB - Partiu Copa vs Ao Vivo
 https://bwifi.my.id/5menit.mp4?m=partiucopaaovivo_1781501400.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 05:30-08:00 WIB - Perugia – Zawiercie, finale. Voli. Liga Šampiona
@@ -300,10 +187,6 @@ https://bwifi.my.id/5menit.mp4?m=perugiazawierciefinalevoliligaampiona_178150140
 https://bwifi.my.id/5menit.mp4?m=championscupleinsterbordeaux_1781501520.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWnkaw5dSRTNX0Kur2DIasWP_J9TDj2AaBCg&s", 📺 ⏳ 05:55-07:55 WIB - Diamond League - 5ª Etapa - Estocolmo, Suécia - Ao Vivo
 https://bwifi.my.id/5menit.mp4?m=diamondleague5etapaestocolmosuciaaovivo_1781502900.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 06:00-07:00 WIB - The Association -NBA Finals Game 5 Postgame
-https://bwifi.my.id/5menit.mp4?m=theassociationnbafinalsgame5postgame_1781503200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 06:00-07:45 WIB - ⋗ Voli (M): Liga narodov: Nemčija – Francija
-https://bwifi.my.id/5menit.mp4?m=voliliganarodovnemijafrancija_1781503200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 06:00-07:00 WIB - Volleyball World Beach Pro Tour
 https://bwifi.my.id/5menit.mp4?m=volleyballworldbeachprotour_1781503200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 06:00-08:00 WIB - Liverpool – Manchester City. Sepakbola. Liga Inggris
@@ -314,22 +197,20 @@ https://bwifi.my.id/5menit.mp4?m=sepakbolabarcelonaatleticomadridligachampions_1
 https://bwifi.my.id/5menit.mp4?m=nemakafrancuskavoliliganacija_1781503200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.ibb.co.com/2tBx8pR/TNT1.png", 📺 ⏳ 06:15-08:45 WIB - Premiership Women's Rugby
 https://bwifi.my.id/5menit.mp4?m=premiershipwomensrugby_1781504100.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 06:30-08:30 WIB - Tenis: ATP 250 – Stuttgart: Finale
-https://bwifi.my.id/5menit.mp4?m=tenisatp250stuttgartfinale_1781505000.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 06:30-08:30 WIB - Proliga
+https://bwifi.my.id/5menit.mp4?m=proliga_1781505000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 06:30-08:30 WIB - Strasbourg – Marseille. Sepakbola. Liga Prancis
 https://bwifi.my.id/5menit.mp4?m=strasbourgmarseillesepakbolaligaprancis_1781505000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZC-ziqZMsoRYfc6wGnXmOAUd0TZ2cGABVvxVJA2ZUZIG2BeY-bN5TMCoI&s=10", 📺 ⏳ 06:41-08:35 WIB - LALIGA EA SPORTS (T25/26): Espanyol – Valencia
 https://bwifi.my.id/5menit.mp4?m=laligaeasportsespanyolvalencia_1781505660.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 07:00-09:00 WIB - NBA Playback -NBA Finals Game 5
-https://bwifi.my.id/5menit.mp4?m=nbaplaybacknbafinalsgame_1781506800.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 07:00-09:00 WIB - Sepakbola: Liga niemiecka. 1. FC Köln – VfB Stuttgart
 https://bwifi.my.id/5menit.mp4?m=sepakbolaliganiemiecka1fcklnvfbstuttgart_1781506800.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 07:00-08:00 WIB - Pregled 14. kola. Sepakbola. Liga Italia
 https://bwifi.my.id/5menit.mp4?m=pregled14kolasepakbolaligaitalia_1781506800.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 07:00-09:00 WIB - NBA Playback -NBA Finals Game 5
+https://bwifi.my.id/5menit.mp4?m=nbaplaybacknbafinalsgame_1781506800.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 07:00-08:00 WIB - Pregled Finala. Tenis. WIMBLEDON
 https://bwifi.my.id/5menit.mp4?m=pregledfinalateniswimbledon_1781506800.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 08:00-09:30 WIB - Voli (M): Liga narodov: Slovenija – Japonska
-https://bwifi.my.id/5menit.mp4?m=voliliganarodovslovenijajaponska_1781510400.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://mimipipi22.github.io/logo/antik/jojsport2.jpg", 📺 ⏳ 08:00-10:25 WIB - Volejbal – Európska liga muži
 https://bwifi.my.id/5menit.mp4?m=volejbaleurpskaligamui_1781510400.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 08:00-10:00 WIB - La cobertura de Alemania – Curazao (Copa Mundial de la FIFA 26)
@@ -340,56 +221,42 @@ https://bwifi.my.id/5menit.mp4?m=volleyballworldbeachprotour_1781510400.0
 https://bwifi.my.id/5menit.mp4?m=thuringerdijonfinalebolatanganehfligaevrope_1781510400.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 08:00-10:00 WIB - Sepakbola. BOLIVAR – FLUMINENSE. Copa Libertadores
 https://bwifi.my.id/5menit.mp4?m=sepakbolabolivarfluminensecopalibertadores_1781510400.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.imgur.com/V562tpO.png", 🇬🇧 ⏳ 08:25-10:35 WIB - Copa Mundial FIBA 3x3 2026
-https://bwifi.my.id/5menit.mp4?m=copamundialfiba3x3_1781511900.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 08:30-10:15 WIB - ⋗ Voli (M): Liga narodov: Bolgarija – Srbija
-https://bwifi.my.id/5menit.mp4?m=voliliganarodovbolgarijasrbija_1781512200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 08:30-11:00 WIB - Beč, polufinala i finale. Basket 3x3. FIBA 3x3 World Tour
 https://bwifi.my.id/5menit.mp4?m=bepolufinalaifinalebasket3x3fiba3x3worldtour_1781512200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.ibb.co.com/7CNg8HK/fxsp3mx.png", 📺 ⏳ 08:50-10:00 WIB - Joventut – Valencia Basket (Juego 3 – Semifinal, Palau Municipal d'Esports de Badalona)
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Fox_sports_3_logo.svg/2560px-Fox_sports_3_logo.svg.png", 📺 ⏳ 08:50-10:00 WIB - Joventut – Valencia Basket (Juego 3 – Semifinal, Palau Municipal d'Esports de Badalona)
 https://bwifi.my.id/5menit.mp4?m=joventutvalenciabasket_1781513400.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.kds.tw/wp-content/uploads/2025/09/6873537eda97e_44L1-480x320.webp", 📺 ⏳ 09:00-10:00 WIB - BWF Swiss Open: HL
-https://bwifi.my.id/5menit.mp4?m=bwfswissopenhl_1781514000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 09:00-10:30 WIB - ⋗ Tennis: Libéma Open 2026. Finale
 https://bwifi.my.id/5menit.mp4?m=tennislibmaopen2026finale_1781514000.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.ibb.co.com/7Md2qy9/fubosp.png", 📺 ⏳ 09:00-12:00 WIB - ⋗ Big League Wiffle Ball: Week 2
-https://bwifi.my.id/5menit.mp4?m=bigleaguewiffleballweek_1781514000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 09:00-11:00 WIB - Sepakbola: LaLiga. Real Madryt CF – Villarreal CF
 https://bwifi.my.id/5menit.mp4?m=sepakbolalaligarealmadrytcfvillarrealcf_1781514000.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.kds.tw/wp-content/uploads/2025/09/6873537eda97e_44L1-480x320.webp", 📺 ⏳ 09:00-10:00 WIB - BWF Swiss Open: HL
+https://bwifi.my.id/5menit.mp4?m=bwfswissopenhl_1781514000.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.ibb.co.com/7Md2qy9/fubosp.png", 📺 ⏳ 09:00-12:00 WIB - ⋗ Big League Wiffle Ball: Week 2
+https://bwifi.my.id/5menit.mp4?m=bigleaguewiffleballweek_1781514000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 09:02-10:52 WIB - Super League: Wakefield V Wigan
 https://bwifi.my.id/5menit.mp4?m=superleaguewakefieldwigan_1781514120.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 09:25-10:00 WIB - Formula One, le mag
 https://bwifi.my.id/5menit.mp4?m=formulaonelemag_1781515500.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 09:30-11:15 WIB - ⋗ Voli (M): Liga narodov: Kanada – Turčija
-https://bwifi.my.id/5menit.mp4?m=voliliganarodovkanadaturija_1781515800.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 09:55-12:00 WIB - ⋗ LaLiga Hypermotion. Promotie Play-off, Finale: Málaga – UD Almería
 https://bwifi.my.id/5menit.mp4?m=laligahypermotionpromotieplayofffinalemlagaudalmera_1781517300.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.ibb.co.com/7CNg8HK/fxsp3mx.png", 📺 ⏳ 10:00-12:00 WIB - Martes Rookies Cup y Gt3, Fecha 5 (Sim Racer)
-https://bwifi.my.id/5menit.mp4?m=martesrookiescupygt3fecha_1781517600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 10:00-13:30 WIB - NASCAR Cup Series: Great American Getaway 400
 https://bwifi.my.id/5menit.mp4?m=nascarcupseriesgreatamericangetaway_1781517600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 10:00-12:00 WIB - Almeria – Malaga, G1. Sepakbola. Španska 2. Liga
 https://bwifi.my.id/5menit.mp4?m=almeriamalagag1sepakbolapanska2liga_1781517600.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Fox_sports_3_logo.svg/2560px-Fox_sports_3_logo.svg.png", 📺 ⏳ 10:00-12:00 WIB - Martes Rookies Cup y Gt3, Fecha 5 (Sim Racer)
+https://bwifi.my.id/5menit.mp4?m=martesrookiescupygt3fecha_1781517600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.canalsur.es/resources/archivos_offline/2025/8/7/1754567016638liga_hipermotion.jpg", 📺 ⏳ 10:00-12:00 WIB - LALIGA HYPERMOTION (T25/26): Málaga – Almería
 https://bwifi.my.id/5menit.mp4?m=laligahypermotionmlagaalmera_1781517600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 10:00-12:00 WIB - Sepakbola. FINALE. Konferencijska Liga
 https://bwifi.my.id/5menit.mp4?m=sepakbolafinalekonferencijskaliga_1781517600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 10:00-12:00 WIB - Finale. Tenis. WTA 500 – London
 https://bwifi.my.id/5menit.mp4?m=finaleteniswta500london_1781517600.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.imgur.com/SLrjImc.png", 🇹🇭 ⏳ 10:40-12:25 WIB - National Rugby League
-https://bwifi.my.id/5menit.mp4?m=nationalrugbyleague_1781520000.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYeh83SinE7EU9kd4zaZ5e3GkKC2_VDlQPTA&s", 📺 ⏳ 11:00-13:00 WIB - CFR Cluj – Univ. Craiova – MECI FOTBAL SUPERLIGA 1
-https://bwifi.my.id/5menit.mp4?m=cfrclujunivcraiovamecifotbalsuperliga_1781521200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 11:00-13:00 WIB - Basket: Liga Spanyol: 1/2 finale (3. tekma): Joventut – Valencia
-https://bwifi.my.id/5menit.mp4?m=basketligaspanyol12finalejoventutvalencia_1781521200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 11:00-13:00 WIB - Nice – Lyon. Sepakbola. Liga Prancis
 https://bwifi.my.id/5menit.mp4?m=nicelyonsepakbolaligaprancis_1781521200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.imgur.com/ulGKX30.png", 📺 ⏳ 11:00-13:00 WIB - Netherlands vs. Japan World Cup Soccer In-Game Gameday
-https://bwifi.my.id/5menit.mp4?m=netherlandsjapanworldcupsocceringamegameday_1781521200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 11:00-12:30 WIB - FINALE. Bola Tangan. EHF Liga Šampiona
 https://bwifi.my.id/5menit.mp4?m=finalebolatanganehfligaampiona_1781521200.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 11:30-13:30 WIB - Basket: Francoska liga: Finale (1. tekma): Paris – Monaco
-https://bwifi.my.id/5menit.mp4?m=basketfrancoskaligafinaleparismonaco_1781523000.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUtY8Rc2n6SO5ac7An15amazpi-zbuVUz31g&s", 📺 ⏳ 11:00-13:00 WIB - CFR Cluj – Univ. Craiova – MECI FOTBAL SUPERLIGA 1
+https://bwifi.my.id/5menit.mp4?m=cfrclujunivcraiovamecifotbalsuperliga_1781521200.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 11:30-13:00 WIB - Gyori – Metz, finale. Bola Tangan. EHF Liga Šampiona (Ž)
 https://bwifi.my.id/5menit.mp4?m=gyorimetzfinalebolatanganehfligaampiona_1781523000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.ibb.co.com/7Md2qy9/fubosp.png", 📺 ⏳ 12:00-13:00 WIB - FIFA World Cup Qualifiers in 60: Türkiye vs. Spain
@@ -400,74 +267,64 @@ https://bwifi.my.id/5menit.mp4?m=theday_1781525520.0
 https://bwifi.my.id/5menit.mp4?m=barcelonaalavessepakbolaligaspanyol_1781526600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 12:30-15:00 WIB - San Antonio – New York, finale G5. Basket. NBA
 https://bwifi.my.id/5menit.mp4?m=sanantonionewyorkfinaleg5basketnba_1781526600.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.kds.tw/wp-content/uploads/2025/09/6873537eda97e_44L1-480x320.webp", 📺 ⏳ 13:00-14:00 WIB - BWF Singapore Open: Finals
-https://bwifi.my.id/5menit.mp4?m=bwfsingaporeopenfinals_1781528400.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 13:00-14:45 WIB - ⋗ Voli (M): Liga narodov: ZDA – Italija
-https://bwifi.my.id/5menit.mp4?m=voliliganarodovzdaitalija_1781528400.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 13:00-15:00 WIB - Zwolle – PSV. Sepakbola. Holandska Liga
-https://bwifi.my.id/5menit.mp4?m=zwollepsvsepakbolaholandskaliga_1781528400.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.imgur.com/ulGKX30.png", 📺 ⏳ 13:00-15:00 WIB - Ivory Coast vs. Ecuador World Cup Soccer In-Game Gameday
-https://bwifi.my.id/5menit.mp4?m=ivorycoastecuadorworldcupsocceringamegameday_1781528400.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 13:00-15:00 WIB - Sepakbola: Liga portugalska. FC Porto – SL Benfica
 https://bwifi.my.id/5menit.mp4?m=sepakbolaligaportugalskafcportoslbenfica_1781528400.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 13:00-14:00 WIB - El post partido y el análisis de Países Bajos – Japón (Copa Mundial de la FIFA 26)
 https://bwifi.my.id/5menit.mp4?m=elpostpartidoyelanlisisdepasesbajosjapn_1781528400.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 13:00-15:00 WIB - Everton – Brentford. Sepakbola. Liga Inggris
 https://bwifi.my.id/5menit.mp4?m=evertonbrentfordsepakbolaligainggris_1781528400.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.kds.tw/wp-content/uploads/2025/09/6873537eda97e_44L1-480x320.webp", 📺 ⏳ 13:00-14:00 WIB - BWF Singapore Open: Finals
+https://bwifi.my.id/5menit.mp4?m=bwfsingaporeopenfinals_1781528400.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.canalsur.es/resources/archivos_offline/2025/8/7/1754567016638liga_hipermotion.jpg", 📺 ⏳ 13:00-15:00 WIB - LALIGA HYPERMOTION (T25/26): Málaga – Las Palmas
 https://bwifi.my.id/5menit.mp4?m=laligahypermotionmlagalaspalmas_1781528400.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 13:00-15:00 WIB - Zwolle – PSV. Sepakbola. Holandska Liga
+https://bwifi.my.id/5menit.mp4?m=zwollepsvsepakbolaholandskaliga_1781528400.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZC-ziqZMsoRYfc6wGnXmOAUd0TZ2cGABVvxVJA2ZUZIG2BeY-bN5TMCoI&s=10", 📺 ⏳ 13:05-15:00 WIB - LALIGA EA SPORTS (T25/26): Osasuna – Elche
 https://bwifi.my.id/5menit.mp4?m=laligaeasportsosasunaelche_1781528700.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://warningfm.github.io/v3/img/LSct2v4.png?v=1.1.1.1", 📺 ⏳ 14:00-16:00 WIB - Pro Futsal League Indonesia
-https://bwifi.my.id/5menit.mp4?m=profutsalleagueindonesia_1781532000.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.kds.tw/wp-content/uploads/2025/09/6873537eda97e_44L1-480x320.webp", 📺 ⏳ 14:00-15:00 WIB - BWF Thailand Open: Finals
-https://bwifi.my.id/5menit.mp4?m=bwfthailandopenfinals_1781532000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 14:00-16:45 WIB - El análisis de los debuts de Brasil, Alemania y Países Bajos (Copa Mundial de la FIFA 26)
 https://bwifi.my.id/5menit.mp4?m=elanlisisdelosdebutsdebrasilalemaniaypasesbajos_1781532000.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.kds.tw/wp-content/uploads/2025/09/6873537eda97e_44L1-480x320.webp", 📺 ⏳ 14:00-15:00 WIB - BWF Thailand Open: Finals
+https://bwifi.my.id/5menit.mp4?m=bwfthailandopenfinals_1781532000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 14:30-16:30 WIB - Villarreal – Mallorca. Sepakbola. Liga Spanyol
 https://bwifi.my.id/5menit.mp4?m=villarrealmallorcasepakbolaligaspanyol_1781533800.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 14:30-16:30 WIB - Finale. Tenis. WTA 250 – Libema
 https://bwifi.my.id/5menit.mp4?m=finaleteniswta250libema_1781533800.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 15:00-17:00 WIB - Sheffield Utd – Leiceter. Sepakbola. Championship
+https://bwifi.my.id/5menit.mp4?m=sheffieldutdleicetersepakbolachampionship_1781535600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.kds.tw/wp-content/uploads/2025/09/6873537eda97e_44L1-480x320.webp", 📺 ⏳ 15:00-16:00 WIB - Uber Cup: MAS – TUR
 https://bwifi.my.id/5menit.mp4?m=ubercupmastur_1781535600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 15:00-17:00 WIB - Schalke – Munster. Sepakbola. Nemačka 2. Liga
 https://bwifi.my.id/5menit.mp4?m=schalkemunstersepakbolanemaka2liga_1781535600.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://i.imgur.com/ulGKX30.png", 📺 ⏳ 15:00-17:00 WIB - Pro Baseball Today
-https://bwifi.my.id/5menit.mp4?m=probaseballtoday_1781535600.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 15:00-17:00 WIB - Sheffield Utd – Leiceter. Sepakbola. Championship
-https://bwifi.my.id/5menit.mp4?m=sheffieldutdleicetersepakbolachampionship_1781535600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 15:00-17:00 WIB - Galatasaray – Vakifbank. Voli. Turska Liga Ž
 https://bwifi.my.id/5menit.mp4?m=galatasarayvakifbankvoliturskaliga_1781535600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 15:00-17:00 WIB - Bugarska – Srbija. Voli. Liga Nacija
 https://bwifi.my.id/5menit.mp4?m=bugarskasrbijavoliliganacija_1781535600.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 15:15-17:15 WIB - Basket: Francoska liga: Paris – Monaco, finale (1. tekma)
-https://bwifi.my.id/5menit.mp4?m=basketfrancoskaligaparismonacofinale_1781536500.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZC-ziqZMsoRYfc6wGnXmOAUd0TZ2cGABVvxVJA2ZUZIG2BeY-bN5TMCoI&s=10", 📺 ⏳ 15:42-17:30 WIB - LALIGA EA SPORTS (T25/26): Levante – Real Madrid
 https://bwifi.my.id/5menit.mp4?m=laligaeasportslevanterealmadrid_1781538120.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 16:30-18:30 WIB - Napoli – Juventus. Sepakbola. Liga Italia
 https://bwifi.my.id/5menit.mp4?m=napolijuventussepakbolaligaitalia_1781541000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 16:30-18:30 WIB - Evans – Đoković. Tenis. WIMBLEDON
 https://bwifi.my.id/5menit.mp4?m=evansokoviteniswimbledon_1781541000.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 17:00-19:00 WIB - Rapid – LASK. Sepakbola. Austrijska Liga
-https://bwifi.my.id/5menit.mp4?m=rapidlasksepakbolaaustrijskaliga_1781542800.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 17:00-18:30 WIB - 2026 UMEKEN/MAJESTY Ladies Championship
 https://bwifi.my.id/5menit.mp4?m=2026umekenmajestyladieschampionship_1781542800.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 17:00-19:00 WIB - Chelsea – West Ham. Sepakbola. Liga Inggris
 https://bwifi.my.id/5menit.mp4?m=chelseawesthamsepakbolaligainggris_1781542800.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 17:00-19:00 WIB - Rapid – LASK. Sepakbola. Austrijska Liga
+https://bwifi.my.id/5menit.mp4?m=rapidlasksepakbolaaustrijskaliga_1781542800.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 17:00-19:00 WIB - Alanya – Galatasaray. Voli. Turska Liga
 https://bwifi.my.id/5menit.mp4?m=alanyagalatasarayvoliturskaliga_1781542800.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 17:00-19:00 WIB - Kanada – Turska. Voli. Liga Nacija
 https://bwifi.my.id/5menit.mp4?m=kanadaturskavoliliganacija_1781542800.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYeh83SinE7EU9kd4zaZ5e3GkKC2_VDlQPTA&s", 📺 ⏳ 17:30-19:00 WIB - FC Arges – Rapid – MECI FOTBAL SUPERLIGA 1
-https://bwifi.my.id/5menit.mp4?m=fcargesrapidmecifotbalsuperliga_1781544600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 17:30-19:00 WIB - SC Rakovica Beograd. Basket 3x3. BG League
 https://bwifi.my.id/5menit.mp4?m=scrakovicabeogradbasket3x3bgleague_1781544600.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUtY8Rc2n6SO5ac7An15amazpi-zbuVUz31g&s", 📺 ⏳ 17:30-19:00 WIB - FC Arges – Rapid – MECI FOTBAL SUPERLIGA 1
+https://bwifi.my.id/5menit.mp4?m=fcargesrapidmecifotbalsuperliga_1781544600.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZC-ziqZMsoRYfc6wGnXmOAUd0TZ2cGABVvxVJA2ZUZIG2BeY-bN5TMCoI&s=10", 📺 ⏳ 17:45-19:35 WIB - LALIGA EA SPORTS (T25/26): At. Madrid – Rayo
 https://bwifi.my.id/5menit.mp4?m=laligaeasportsatmadridrayo_1781545500.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 18:00-19:00 WIB - EUROpa League. Finale: SC Freiburg – Aston Villa
 https://bwifi.my.id/5menit.mp4?m=europaleaguefinalescfreiburgastonvilla_1781546400.0
-#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf_RuUF_5SYLht5G2s2GmiHm2FLm1I0lG_Bg&usqp=CAU", 📺 ⏳ 18:45-20:30 WIB - Tenis – ženski ITF turnir: WTA Zagreb, Finale
-https://bwifi.my.id/5menit.mp4?m=tenisenskiitfturnirwtazagrebfinale_1781549100.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://poster.starhubgo.com/Linear_channels2/203_1920x1080_HTV.png?w=272", 📺 ⏳ 18:00-00:00 WIB - LPGA Tour 2026 – Dow Championship Round 4
+https://bwifi.my.id/5menit.mp4?m=lpgatour2026dowchampionshipround_1781546400.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 19:00-21:00 WIB - Basketbol: Euroleague
 https://bwifi.my.id/5menit.mp4?m=basketboleuroleague_1781550000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 19:00-22:00 WIB - West Ham – QPR. Sepakbola. FA CUP
@@ -482,3 +339,35 @@ https://bwifi.my.id/5menit.mp4?m=efesfenerbahcepolufinaleg4basketturskaliga_1781
 https://bwifi.my.id/5menit.mp4?m=meza3mestobolatanganehfligaampiona_1781550000.0
 #EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 19:00-22:00 WIB - Taberner – Darderi, finale. Tenis. ATP 250 – Umag
 https://bwifi.my.id/5menit.mp4?m=tabernerdarderifinaletenisatp250umag_1781550000.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 19:30-21:00 WIB - Metz – CSM Bucuresti, polufinale 1. Bola Tangan. EHF Liga Šampiona (Ž)
+https://bwifi.my.id/5menit.mp4?m=metzcsmbucurestipolufinale1bolatanganehfligaampiona_1781551800.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 19:55-23:00 WIB - Bonjour ! La Matinale TF1
+https://bwifi.my.id/5menit.mp4?m=bonjourlamatinaletf_1781553300.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 20:30-23:00 WIB - Indonesia Juara Badminton
+https://bwifi.my.id/5menit.mp4?m=indonesiajuarabadminton_1781555400.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 21:00-23:00 WIB - Sepakbola: Liga francuska. AS Monaco – RC Lens
+https://bwifi.my.id/5menit.mp4?m=sepakbolaligafrancuskaasmonacorclens_1781557200.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 21:00-23:00 WIB - Deportivo – Castellon. Sepakbola. Španska 2. Liga
+https://bwifi.my.id/5menit.mp4?m=deportivocastellonsepakbolapanska2liga_1781557200.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.kds.tw/wp-content/uploads/2025/09/6873537eda97e_44L1-480x320.webp", 📺 ⏳ 21:00-22:00 WIB - Uber Cup: JPN – MAS
+https://bwifi.my.id/5menit.mp4?m=ubercupjpnmas_1781557200.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZC-ziqZMsoRYfc6wGnXmOAUd0TZ2cGABVvxVJA2ZUZIG2BeY-bN5TMCoI&s=10", 📺 ⏳ 21:00-22:50 WIB - LALIGA EA SPORTS (T25/26): Barcelona – Real Sociedad
+https://bwifi.my.id/5menit.mp4?m=laligaeasportsbarcelonarealsociedad_1781557200.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 21:00-23:00 WIB - Darmstadt – Elversberg. Sepakbola. Nemačka 2. Liga
+https://bwifi.my.id/5menit.mp4?m=darmstadtelversbergsepakbolanemaka2liga_1781557200.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 21:00-23:00 WIB - Finale: Olympiacos – Panathinaikos, G1. Basket. Grčka Liga
+https://bwifi.my.id/5menit.mp4?m=finaleolympiacospanathinaikosg1basketgrkaliga_1781557200.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 🇬🇧 ⏳ 21:00-23:00 WIB - Chelsea: Premier Lge Years 05/06
+https://bwifi.my.id/5menit.mp4?m=chelseapremierlgeyears05_1781557200.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.kds.tw/wp-content/uploads/2025/09/6873535cc3304_c1LG-480x320.png", 📺 ⏳ 21:35-00:50 WIB - MotoGP Hungary: Moto3 & Moto2 Qualifying/MotoGP Sprint
+https://bwifi.my.id/5menit.mp4?m=motogphungarymoto3moto2qualifyingmotogpsprint_1781559300.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 21:52-23:42 WIB - Premiership Rugby: Bath V Exeter
+https://bwifi.my.id/5menit.mp4?m=premiershiprugbybathexeter_1781560320.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://www.kds.tw/wp-content/uploads/2025/09/6873537eda97e_44L1-480x320.webp", 📺 ⏳ 22:00-01:30 WIB - Uber Cup: China – Ukraine
+https://bwifi.my.id/5menit.mp4?m=ubercupchinaukraine_1781560800.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKBCa6SydXxbOh3qbRLTAWW6FOnRo5nXa9kw&s", 🇬🇧 ⏳ 22:00-00:00 WIB - Valencia vs. Rayo Vallecano
+https://bwifi.my.id/5menit.mp4?m=valenciarayovallecano_1781560800.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 22:00-01:00 WIB - College Baseball 2026 Men's College World Series, Game 5: Teams TBD
+https://bwifi.my.id/5menit.mp4?m=collegebaseball2026menscollegeworldseriesgame5teamstbd_1781560800.0
+#EXTINF:-1 group-title="📅 JADWAL HARI INI" tvg-logo="", 📺 ⏳ 22:00-01:00 WIB - Bublik – Medvedev, finale. Tenis. ATP 500 – Halle
+https://bwifi.my.id/5menit.mp4?m=bublikmedvedevfinaletenisatp500halle_1781560800.0
